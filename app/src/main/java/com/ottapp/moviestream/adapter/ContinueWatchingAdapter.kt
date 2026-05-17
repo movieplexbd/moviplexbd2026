@@ -41,7 +41,6 @@ class ContinueWatchingAdapter(
         holder.tvTitle.text = entry.title
         holder.progressBar.progress = entry.progressPercent
         holder.iv.loadImage(entry.bannerUrl)
-            .placeholder(R.color.surface2).into(holder.iv)
         holder.itemView.setOnClickListener { onClick(entry) }
     }
 }
