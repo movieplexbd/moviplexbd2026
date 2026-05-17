@@ -1,42 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent" android:layout_height="wrap_content"
-    android:layout_marginHorizontal="14dp" android:layout_marginBottom="10dp"
-    app:cardBackgroundColor="@color/surface" app:cardCornerRadius="18dp"
-    app:cardElevation="0dp" app:strokeWidth="0.5dp" app:strokeColor="@color/border">
+  <com.google.android.material.card.MaterialCardView
+      xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      android:layout_width="match_parent" android:layout_height="wrap_content"
+      android:layout_marginHorizontal="14dp" android:layout_marginBottom="10dp"
+      app:cardBackgroundColor="@color/surface" app:cardCornerRadius="18dp"
+      app:cardElevation="0dp" app:strokeWidth="0.5dp" app:strokeColor="@color/border">
 
-    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:orientation="horizontal" android:gravity="center_vertical" android:padding="12dp">
+      <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+          android:orientation="horizontal" android:gravity="center_vertical" android:padding="12dp">
 
-        <!-- Thumbnail -->
-        <FrameLayout android:layout_width="80dp" android:layout_height="60dp">
-            <ImageView android:id="@+id/iv_thumb"
-                android:layout_width="match_parent" android:layout_height="match_parent"
-                android:scaleType="centerCrop" android:background="@drawable/bg_movie_card" />
-        </FrameLayout>
+          <FrameLayout android:layout_width="80dp" android:layout_height="60dp">
+              <ImageView android:id="@+id/iv_thumb"
+                  android:layout_width="match_parent" android:layout_height="match_parent"
+                  android:scaleType="centerCrop" android:background="@drawable/bg_movie_card" />
+          </FrameLayout>
 
-        <!-- Info -->
-        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
-            android:layout_weight="1" android:orientation="vertical"
-            android:paddingHorizontal="12dp">
-            <TextView android:id="@+id/tv_title"
-                android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:textSize="14sp" android:textStyle="bold"
-                android:textColor="@color/t1" android:fontFamily="@font/poppins"
-                android:singleLine="true" android:ellipsize="end" />
-            <TextView android:id="@+id/tv_size"
-                android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:textSize="11sp" android:textColor="@color/t3"
-                android:fontFamily="@font/poppins" android:layout_marginTop="3dp" />
-        </LinearLayout>
+          <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+              android:layout_weight="1" android:orientation="vertical"
+              android:paddingHorizontal="12dp">
+              <TextView android:id="@+id/tv_title"
+                  android:layout_width="match_parent" android:layout_height="wrap_content"
+                  android:textSize="14sp" android:textStyle="bold"
+                  android:textColor="@color/t1" android:fontFamily="@font/poppins"
+                  android:singleLine="true" android:ellipsize="end" />
+              <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                  android:orientation="horizontal" android:layout_marginTop="3dp">
+                  <TextView android:id="@+id/tv_category"
+                      android:layout_width="0dp" android:layout_height="wrap_content"
+                      android:layout_weight="1" android:textSize="11sp" android:textColor="@color/t3"
+                      android:fontFamily="@font/poppins" />
+                  <TextView android:id="@+id/tv_rating"
+                      android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:textSize="11sp" android:textColor="@color/brand_primary"
+                      android:fontFamily="@font/poppins" />
+              </LinearLayout>
+              <TextView android:id="@+id/tv_size"
+                  android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:textSize="11sp" android:textColor="@color/t3"
+                  android:fontFamily="@font/poppins" android:layout_marginTop="3dp" />
+          </LinearLayout>
 
-        <!-- Delete -->
-        <ImageButton android:id="@+id/btn_delete"
-            android:layout_width="40dp" android:layout_height="40dp"
-            android:src="@drawable/ic_delete" android:background="?attr/selectableItemBackgroundBorderless"
-            android:padding="8dp" app:tint="@color/t3" android:contentDescription="Delete" />
+          <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:orientation="vertical" android:gravity="center">
+              <ImageButton android:id="@+id/btn_play"
+                  android:layout_width="40dp" android:layout_height="40dp"
+                  android:src="@drawable/ic_play" android:background="?attr/selectableItemBackgroundBorderless"
+                  android:padding="8dp" app:tint="@color/brand_primary" android:contentDescription="Play" />
+              <ImageButton android:id="@+id/btn_delete"
+                  android:layout_width="40dp" android:layout_height="40dp"
+                  android:src="@drawable/ic_delete" android:background="?attr/selectableItemBackgroundBorderless"
+                  android:padding="8dp" app:tint="@color/t3" android:contentDescription="Delete" />
+          </LinearLayout>
 
-    </LinearLayout>
-</com.google.android.material.card.MaterialCardView>
+      </LinearLayout>
+  </com.google.android.material.card.MaterialCardView>
