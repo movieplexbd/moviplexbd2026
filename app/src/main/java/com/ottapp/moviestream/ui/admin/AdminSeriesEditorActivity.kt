@@ -143,7 +143,7 @@ class AdminSeriesEditorActivity : AppCompatActivity() {
             etNum.setText(nextNum.toString())
         }
 
-        AlertDialog.Builder(this, R.style.AlertDialogTheme)
+        AlertDialog.Builder(this)
             .setTitle(if (isEdit) "Episode Edit করুন" else "নতুন Episode যোগ করুন")
             .setView(view)
             .setPositiveButton(if (isEdit) "আপডেট করুন" else "যোগ করুন") { _, _ ->
