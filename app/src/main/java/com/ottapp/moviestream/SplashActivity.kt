@@ -16,6 +16,7 @@ package com.ottapp.moviestream
   import com.google.firebase.database.FirebaseDatabase
   import com.ottapp.moviestream.ui.onboarding.OnboardingActivity
   import com.ottapp.moviestream.util.AccessManager
+import com.ottapp.moviestream.util.GitHubUpdateManager
   import kotlinx.coroutines.launch
   import kotlinx.coroutines.tasks.await
 
