@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="20dp"
+        android:paddingTop="52dp"
+        android:paddingBottom="16dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="ডাউনলোড"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="@color/t1"
+            android:fontFamily="@font/poppins" />
+
+        <ImageView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:src="@drawable/ic_download"
+            app:tint="@color/t2" />
+    </LinearLayout>
+
+    <!-- Storage info card -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_storage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="0dp"
+        app:cardBackgroundColor="@color/surface"
+        app:strokeWidth="0.5dp"
+        app:strokeColor="@color/border">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:gravity="center_vertical">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/tv_storage_used"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0 MB"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/brand_primary"
+                    android:fontFamily="@font/poppins" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ব্যবহৃত"
+                    android:textSize="10sp"
+                    android:textColor="@color/t3"
+                    android:fontFamily="@font/poppins" />
+            </LinearLayout>
+
+            <View android:layout_width="1dp" android:layout_height="40dp"
+                android:background="@color/border" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/tv_storage_free"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="— GB"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/green"
+                    android:fontFamily="@font/poppins" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="মুক্ত"
+                    android:textSize="10sp"
+                    android:textColor="@color/t3"
+                    android:fontFamily="@font/poppins" />
+            </LinearLayout>
+
+            <View android:layout_width="1dp" android:layout_height="40dp"
+                android:background="@color/border" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/tv_download_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/t1"
+                    android:fontFamily="@font/poppins" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="মুভি"
+                    android:textSize="10sp"
+                    android:textColor="@color/t3"
+                    android:fontFamily="@font/poppins" />
+            </LinearLayout>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Download list -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_downloads"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingHorizontal="14dp"
+            android:paddingBottom="90dp"
+            android:clipToPadding="false"
+            android:scrollbars="none" />
+
+        <!-- Active downloads -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_active_downloads"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:paddingHorizontal="14dp"
+            android:paddingBottom="100dp"
+            android:clipToPadding="false" />
+
+        <!-- Empty state -->
+        <LinearLayout
+            android:id="@+id/layout_empty"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/ic_nav_download"
+                app:tint="@color/t3"
+                android:alpha="0.5" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/download_empty_title"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/t2"
+                android:fontFamily="@font/poppins"
+                android:layout_marginTop="16dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/download_empty_sub"
+                android:textSize="13sp"
+                android:textColor="@color/t3"
+                android:fontFamily="@font/poppins"
+                android:layout_marginTop="6dp"
+                android:gravity="center"
+                android:paddingHorizontal="40dp" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</LinearLayout>

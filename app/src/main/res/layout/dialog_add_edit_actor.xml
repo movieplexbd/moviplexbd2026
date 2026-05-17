@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:orientation="vertical" android:background="@drawable/bg_glass_card"
+    android:padding="24dp">
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="অভিনেতা যোগ/সম্পাদনা" android:textSize="17sp" android:textStyle="bold"
+        android:textColor="@color/t1" android:fontFamily="@font/poppins"
+        android:layout_marginBottom="18dp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_name"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp" android:hint="অভিনেতার নাম"
+        app:boxBackgroundColor="#06000000" app:boxStrokeColor="@color/brand_primary"
+        app:boxStrokeWidthFocused="1.5dp" app:boxStrokeWidth="0.5dp" app:hintTextColor="@color/t2"
+        app:boxCornerRadiusTopStart="14dp" app:boxCornerRadiusTopEnd="14dp"
+        app:boxCornerRadiusBottomStart="14dp" app:boxCornerRadiusBottomEnd="14dp">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_name" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:textColor="@color/t1"
+            android:fontFamily="@font/poppins" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_image_url"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp" android:hint="ছবি URL"
+        app:boxBackgroundColor="#06000000" app:boxStrokeColor="@color/brand_primary"
+        app:boxStrokeWidthFocused="1.5dp" app:boxStrokeWidth="0.5dp" app:hintTextColor="@color/t2"
+        app:boxCornerRadiusTopStart="14dp" app:boxCornerRadiusTopEnd="14dp"
+        app:boxCornerRadiusBottomStart="14dp" app:boxCornerRadiusBottomEnd="14dp">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_image_url" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:inputType="textUri"
+            android:textColor="@color/t1" android:fontFamily="@font/poppins" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_bio"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp" android:hint="জীবনী (ঐচ্ছিক)"
+        app:boxBackgroundColor="#06000000" app:boxStrokeColor="@color/brand_primary"
+        app:boxStrokeWidthFocused="1.5dp" app:boxStrokeWidth="0.5dp" app:hintTextColor="@color/t2"
+        app:boxCornerRadiusTopStart="14dp" app:boxCornerRadiusTopEnd="14dp"
+        app:boxCornerRadiusBottomStart="14dp" app:boxCornerRadiusBottomEnd="14dp">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_bio" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:inputType="textMultiLine"
+            android:lines="3" android:textColor="@color/t1" android:fontFamily="@font/poppins" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <com.google.android.material.button.MaterialButton android:id="@+id/btn_cancel"
+            android:layout_width="0dp" android:layout_weight="1" android:layout_height="48dp"
+            android:text="বাতিল" android:textColor="@color/brand_primary"
+            android:fontFamily="@font/poppins"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            app:strokeColor="@color/brand_primary" app:cornerRadius="14dp"
+            app:backgroundTint="@color/transparent" android:layout_marginEnd="8dp" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/btn_save"
+            android:layout_width="0dp" android:layout_weight="1" android:layout_height="48dp"
+            android:text="সংরক্ষণ" android:textColor="@color/white"
+            android:fontFamily="@font/poppins"
+            app:backgroundTint="@color/brand_primary" app:cornerRadius="14dp" />
+    </LinearLayout>
+</LinearLayout>

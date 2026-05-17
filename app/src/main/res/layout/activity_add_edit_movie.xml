@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="@color/bg">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:background="@color/surface" app:elevation="0dp">
+        <androidx.appcompat.widget.Toolbar android:id="@+id/toolbar"
+            android:layout_width="match_parent" android:layout_height="?attr/actionBarSize"
+            app:title="মুভি যোগ/সম্পাদনা"
+            app:titleTextAppearance="@style/TextStyle.Title"
+            app:navigationIcon="@drawable/ic_arrow_back"
+            app:navigationIconTint="@color/t1" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView android:layout_width="match_parent" android:layout_height="0dp"
+        android:layout_weight="1" android:scrollbars="none" android:overScrollMode="never">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:padding="16dp">
+
+            <!-- Thumbnail preview -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent" android:layout_height="200dp"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="@color/surface2" app:cardCornerRadius="16dp"
+                app:cardElevation="0dp" app:strokeWidth="1dp" app:strokeColor="@color/border">
+                <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent">
+                    <ImageView android:id="@+id/iv_preview"
+                        android:layout_width="match_parent" android:layout_height="match_parent"
+                        android:scaleType="centerCrop" />
+                    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_gravity="center" android:orientation="vertical"
+                        android:gravity="center">
+                        <ImageView android:layout_width="40dp" android:layout_height="40dp"
+                            android:src="@drawable/ic_download" app:tint="@color/t3" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="থাম্বনেইল URL দিন" android:textSize="12sp"
+                            android:textColor="@color/t3" android:fontFamily="@font/poppins"
+                            android:layout_marginTop="8dp" />
+                    </LinearLayout>
+                </FrameLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Form fields -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_title"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp" android:hint="মুভির নাম *"
+                app:boxBackgroundColor="#06000000" app:boxStrokeColor="@color/brand_primary"
+                app:boxStrokeWidthFocused="1.5dp" app:boxStrokeWidth="0.5dp"
+                app:hintTextColor="@color/t2"
+                app:boxCornerRadiusTopStart="14dp" app:boxCornerRadiusTopEnd="14dp"
+                app:boxCornerRadiusBottomStart="14dp" app:boxCornerRadiusBottomEnd="14dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_title" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:textColor="@color/t1"
+                    android:fontFamily="@font/poppins" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_description"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp" android:hint="বিবরণ"
+                app:boxBackgroundColor="#06000000" app:boxStrokeColor="@color/brand_primary"
+                app:boxStrokeWidthFocused="1.5dp" app:boxStrokeWidth="0.5dp"
+                app:hintTextColor="@color/t2"
+                app:boxCornerRadiusTopStart="14dp" app:boxCornerRadiusTopEnd="14dp"
+                app:boxCornerRadiusBottomStart="14dp" app:boxCornerRadiusBottomEnd="14dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_description" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:inputType="textMultiLine"
+                    android:lines="4" android:textColor="@color/t1" android:fontFamily="@font/poppins" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_thumb_url"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp" android:hint="থাম্বনেইল URL"
+                app:boxBackgroundColor="#06000000" app:boxStrokeColor="@color/brand_primary"
+                app:boxStrokeWidthFocused="1.5dp" app:boxStrokeWidth="0.5dp"
+                app:hintTextColor="@color/t2"
+                app:boxCornerRadiusTopStart="14dp" app:boxCornerRadiusTopEnd="14dp"
+                app:boxCornerRadiusBottomStart="14dp" app:boxCornerRadiusBottomEnd="14dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_thumb_url" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:inputType="textUri"
+                    android:textColor="@color/t1" android:fontFamily="@font/poppins" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_video_url"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp" android:hint="ভিডিও URL"
+                app:boxBackgroundColor="#06000000" app:boxStrokeColor="@color/brand_primary"
+                app:boxStrokeWidthFocused="1.5dp" app:boxStrokeWidth="0.5dp"
+                app:hintTextColor="@color/t2"
+                app:boxCornerRadiusTopStart="14dp" app:boxCornerRadiusTopEnd="14dp"
+                app:boxCornerRadiusBottomStart="14dp" app:boxCornerRadiusBottomEnd="14dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_video_url" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:inputType="textUri"
+                    android:textColor="@color/t1" android:fontFamily="@font/poppins" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Category, Rating, Year in a row -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:layout_marginBottom="12dp">
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_category"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp" android:layout_weight="2"
+                    android:layout_height="wrap_content" android:hint="ক্যাটাগরি"
+                    android:layout_marginEnd="8dp"
+                    app:boxBackgroundColor="#06000000" app:boxStrokeColor="@color/brand_primary"
+                    app:boxStrokeWidthFocused="1.5dp" app:boxStrokeWidth="0.5dp"
+                    app:hintTextColor="@color/t2"
+                    app:boxCornerRadiusTopStart="14dp" app:boxCornerRadiusTopEnd="14dp"
+                    app:boxCornerRadiusBottomStart="14dp" app:boxCornerRadiusBottomEnd="14dp">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_category" android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:textColor="@color/t1"
+                        android:fontFamily="@font/poppins" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_rating"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp" android:layout_weight="1"
+                    android:layout_height="wrap_content" android:hint="রেটিং"
+                    app:boxBackgroundColor="#06000000" app:boxStrokeColor="@color/brand_primary"
+                    app:boxStrokeWidthFocused="1.5dp" app:boxStrokeWidth="0.5dp"
+                    app:hintTextColor="@color/t2"
+                    app:boxCornerRadiusTopStart="14dp" app:boxCornerRadiusTopEnd="14dp"
+                    app:boxCornerRadiusBottomStart="14dp" app:boxCornerRadiusBottomEnd="14dp">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_rating" android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:inputType="numberDecimal"
+                        android:textColor="@color/t1" android:fontFamily="@font/poppins" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <!-- Premium toggle -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="56dp"
+                android:orientation="horizontal" android:gravity="center_vertical"
+                android:background="@drawable/bg_card" android:paddingHorizontal="16dp"
+                android:layout_marginBottom="20dp">
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:text="প্রিমিয়াম কনটেন্ট"
+                    android:textSize="14sp" android:textColor="@color/t1"
+                    android:fontFamily="@font/poppins" />
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/switch_free"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:checked="false" />
+            </LinearLayout>
+
+
+            <!-- Trailer URL -->
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:hint="Trailer URL (YouTube/HLS)"
+                android:layout_marginBottom="12dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_trailer_url"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:inputType="textUri" android:fontFamily="@font/poppins" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Genre -->
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:hint="Genre (comma separated: Action, Drama)"
+                android:layout_marginBottom="12dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_genre"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:inputType="text" android:fontFamily="@font/poppins" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Series toggle -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="56dp"
+                android:orientation="horizontal" android:gravity="center_vertical"
+                android:background="@drawable/bg_card" android:paddingHorizontal="16dp"
+                android:layout_marginBottom="12dp">
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:text="সিরিজ (Series)"
+                    android:textSize="14sp" android:textColor="@color/t1"
+                    android:fontFamily="@font/poppins" />
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/switch_series"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:checked="false" />
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton android:id="@+id/btn_save"
+                android:layout_width="match_parent" android:layout_height="54dp"
+                android:text="সংরক্ষণ করুন" android:textSize="15sp"
+                android:textColor="@color/white" android:textStyle="bold"
+                android:fontFamily="@font/poppins"
+                app:backgroundTint="@null" android:background="@drawable/bg_login_button"
+                app:cornerRadius="28dp" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

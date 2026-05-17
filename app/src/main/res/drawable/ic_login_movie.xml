@@ -1,0 +1,14 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Movie Reel / Cinema Icon -->
+    <path
+        android:fillColor="#FF4B6A"
+        android:pathData="M18,4l2,4h-3l-2,-4h-2l2,4h-3l-2,-4h-2l2,4h-3l-2,-4H7L5,8H2v12h20V4h-4zM20,18H4V10h16v8z"/>
+    <path
+        android:fillColor="#FF4B6A"
+        android:fillAlpha="0.3"
+        android:pathData="M10,11l5,3l-5,3z"/>
+</vector>

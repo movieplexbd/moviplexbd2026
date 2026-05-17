@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/admin_nav_graph"
+    app:startDestination="@id/adminMoviesFragment">
+
+    <fragment
+        android:id="@+id/adminMoviesFragment"
+        android:name="com.ottapp.moviestream.ui.admin.AdminMoviesFragment"
+        android:label="মুভি ম্যানেজমেন্ট"
+        tools:layout="@layout/fragment_admin_movies" />
+
+    <fragment
+        android:id="@+id/adminBannersFragment"
+        android:name="com.ottapp.moviestream.ui.admin.AdminBannersFragment"
+        android:label="ব্যানার ম্যানেজমেন্ট"
+        tools:layout="@layout/fragment_admin_banners" />
+
+    <fragment
+        android:id="@+id/adminReelsFragment"
+        android:name="com.ottapp.moviestream.ui.admin.AdminReelsFragment"
+        android:label="রিলস ম্যানেজমেন্ট"
+        tools:layout="@layout/fragment_admin_reels" />
+
+    <fragment
+        android:id="@+id/adminUsersFragment"
+        android:name="com.ottapp.moviestream.ui.admin.AdminUsersFragment"
+        android:label="ইউজার ম্যানেজমেন্ট"
+        tools:layout="@layout/fragment_admin_users" />
+
+    <fragment
+        android:id="@+id/adminSubsFragment"
+        android:name="com.ottapp.moviestream.ui.admin.AdminSubsFragment"
+        android:label="পেমেন্ট রিকোয়েস্ট"
+        tools:layout="@layout/fragment_admin_subs" />
+
+    <fragment
+        android:id="@+id/adminActorsFragment"
+        android:name="com.ottapp.moviestream.ui.admin.AdminActorsFragment"
+        android:label="অভিনেতা ম্যানেজমেন্ট"
+        tools:layout="@layout/fragment_admin_actors" />
+
+</navigation>

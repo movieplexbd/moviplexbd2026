@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.ottapp.moviestream.ui.home.HomeFragment"
+        android:label="হোম"
+        tools:layout="@layout/fragment_home">
+        <action android:id="@+id/action_home_to_detail" app:destination="@id/movieDetailFragment"
+            app:enterAnim="@anim/slide_up" app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in" app:popExitAnim="@anim/slide_down" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/moviesFragment"
+        android:name="com.ottapp.moviestream.ui.movies.MoviesFragment"
+        android:label="মুভি"
+        tools:layout="@layout/fragment_movies">
+        <action android:id="@+id/action_movies_to_detail" app:destination="@id/movieDetailFragment"
+            app:enterAnim="@anim/slide_up" app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in" app:popExitAnim="@anim/slide_down" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.ottapp.moviestream.ui.search.SearchFragment"
+        android:label="খোঁজো"
+        tools:layout="@layout/fragment_search">
+        <action android:id="@+id/action_search_to_detail" app:destination="@id/movieDetailFragment"
+            app:enterAnim="@anim/slide_up" app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in" app:popExitAnim="@anim/slide_down" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/reelsFragment"
+        android:name="com.ottapp.moviestream.ui.reels.ReelsFragment"
+        android:label="রিলস"
+        tools:layout="@layout/fragment_reels" />
+
+    <fragment
+        android:id="@+id/downloadFragment"
+        android:name="com.ottapp.moviestream.ui.download.DownloadFragment"
+        android:label="ডাউনলোড"
+        tools:layout="@layout/fragment_download" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.ottapp.moviestream.ui.profile.ProfileFragment"
+        android:label="প্রোফাইল"
+        tools:layout="@layout/fragment_profile">
+        <action android:id="@+id/action_profile_to_detail" app:destination="@id/movieDetailFragment"
+            app:enterAnim="@anim/slide_up" app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in" app:popExitAnim="@anim/slide_down" />
+        <action android:id="@+id/action_profile_to_watchlist" app:destination="@id/watchlistFragment"
+            app:enterAnim="@anim/slide_up" app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in" app:popExitAnim="@anim/slide_down" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/watchlistFragment"
+        android:name="com.ottapp.moviestream.ui.watchlist.WatchlistFragment"
+        android:label="ওয়াচলিস্ট"
+        tools:layout="@layout/fragment_watchlist">
+        <action android:id="@+id/action_watchlist_to_detail" app:destination="@id/movieDetailFragment"
+            app:enterAnim="@anim/slide_up" app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in" app:popExitAnim="@anim/slide_down" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/movieDetailFragment"
+        android:name="com.ottapp.moviestream.ui.detail.MovieDetailFragment"
+        android:label="মুভি বিবরণ"
+        tools:layout="@layout/fragment_detail_container">
+        <argument android:name="extra_movie_id" app:argType="string" android:defaultValue="" />
+        <action android:id="@+id/action_detail_to_actor" app:destination="@id/actorProfileFragment"
+            app:enterAnim="@anim/slide_up" app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in" app:popExitAnim="@anim/slide_down" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/actorProfileFragment"
+        android:name="com.ottapp.moviestream.ui.detail.ActorProfileFragment"
+        android:label="অভিনেতা প্রোফাইল"
+        tools:layout="@layout/fragment_actor_profile">
+        <argument android:name="actor_id" app:argType="string" />
+        <action android:id="@+id/action_actor_to_detail" app:destination="@id/movieDetailFragment"
+            app:enterAnim="@anim/slide_up" app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in" app:popExitAnim="@anim/slide_down" />
+    </fragment>
+
+    <!-- Global action to actor profile from anywhere -->
+    <action
+        android:id="@+id/action_global_to_actor"
+        app:destination="@id/actorProfileFragment"
+        app:enterAnim="@anim/slide_up"
+        app:exitAnim="@anim/fade_out"
+        app:popEnterAnim="@anim/fade_in"
+        app:popExitAnim="@anim/slide_down" />
+
+    <action
+        android:id="@+id/action_global_to_download"
+        app:destination="@id/downloadFragment"
+        app:popUpTo="@id/homeFragment"
+        app:popUpToInclusive="false"
+        app:launchSingleTop="true" />
+
+</navigation>

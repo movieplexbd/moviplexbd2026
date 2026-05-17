@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/adminMoviesFragment"
+        android:icon="@drawable/ic_nav_movies"
+        android:title="মুভি" />
+    <item
+        android:id="@+id/adminBannersFragment"
+        android:icon="@drawable/ic_nav_home"
+        android:title="ব্যানার" />
+    <item
+        android:id="@+id/adminReelsFragment"
+        android:icon="@drawable/ic_nav_reels"
+        android:title="রিলস" />
+    <item
+        android:id="@+id/adminUsersFragment"
+        android:icon="@drawable/ic_nav_profile"
+        android:title="ইউজার" />
+    <item
+        android:id="@+id/adminSubsFragment"
+        android:icon="@drawable/ic_nav_download"
+        android:title="পেমেন্ট" />
+    <item
+        android:id="@+id/adminActorsFragment"
+        android:icon="@drawable/ic_nav_profile"
+        android:title="অভিনেতা" />
+</menu>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!--  CineStream · Premium Warm Light (Default Theme)   -->
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- Core Backgrounds — warm off-white, NOT pure white -->
+    <color name="bg">#F4F1EE</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="surface2">#EDE9E5</color>
+    <color name="surface3">#E4E0DC</color>
+    <color name="surface_glass">#EEFFFFFF</color>
+
+    <!-- Brand -->
+    <color name="brand_primary">#E5001A</color>
+    <color name="brand_secondary">#FF6B35</color>
+    <color name="brand_gradient_start">#E5001A</color>
+    <color name="brand_gradient_end">#FF3D00</color>
+    <color name="brand_glow">#30E5001A</color>
+    <color name="brand_soft">#12E5001A</color>
+
+    <!-- Gold / Premium -->
+    <color name="gold">#F59E0B</color>
+    <color name="gold_soft">#20F59E0B</color>
+    <color name="amber">#D97706</color>
+    <color name="amber_dark">#92400E</color>
+
+    <!-- Accent -->
+    <color name="accent_cyan">#0EA5E9</color>
+    <color name="accent_purple">#7C3AED</color>
+    <color name="accent_pink">#EC4899</color>
+
+    <!-- Text Hierarchy -->
+    <color name="t1">#1A1A2E</color>
+    <color name="t2">#55556A</color>
+    <color name="t3">#9B9BAE</color>
+    <color name="t_on_dark">#FFFFFF</color>
+
+    <!-- Status -->
+    <color name="red">#E5001A</color>
+    <color name="red_soft">#12E5001A</color>
+    <color name="green">#16A34A</color>
+    <color name="green_soft">#1216A34A</color>
+    <color name="blue">#1D4ED8</color>
+    <color name="blue_glow">#201D4ED8</color>
+    <color name="orange">#EA580C</color>
+
+    <!-- Borders & Overlays -->
+    <color name="border">#18000000</color>
+    <color name="border_bright">#30000000</color>
+    <color name="overlay_dark">#99000000</color>
+    <color name="overlay_medium">#66000000</color>
+    <color name="overlay_light">#33000000</color>
+
+    <!-- Static -->
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="transparent">#00000000</color>
+
+    <!-- Player (always dark) -->
+    <color name="player_bg">#000000</color>
+    <color name="player_overlay">#99000000</color>
+    <color name="player_controls">#FFFFFFFF</color>
+
+    <!-- Nav -->
+    <color name="nav_bg">#FFFFFF</color>
+    <color name="nav_indicator">#12E5001A</color>
+    <color name="nav_active">#E5001A</color>
+    <color name="nav_inactive">#9B9BAE</color>
+
+    <!-- Badge -->
+    <color name="badge_bg">#E5001A</color>
+    <color name="badge_text">#FFFFFF</color>
+</resources>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <com.google.android.exoplayer2.ui.StyledPlayerView
+        android:id="@+id/player_view"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        app:use_controller="false" app:resize_mode="fill" />
+
+    <View android:layout_width="match_parent" android:layout_height="match_parent"
+        android:background="@drawable/gradient_bottom" />
+
+    <!-- Right side actions -->
+    <LinearLayout android:layout_width="56dp" android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="100dp" android:layout_marginEnd="10dp"
+        android:orientation="vertical" android:gravity="center">
+
+        <ImageButton android:id="@+id/btn_reel_like"
+            android:layout_width="46dp" android:layout_height="46dp"
+            android:src="@drawable/ic_star" app:tint="@color/white"
+            android:background="@drawable/bg_close_btn" android:padding="10dp"
+            android:contentDescription="Like" android:layout_marginBottom="16dp" />
+
+        <ImageButton android:id="@+id/btn_reel_share"
+            android:layout_width="46dp" android:layout_height="46dp"
+            android:src="@drawable/ic_share" app:tint="@color/white"
+            android:background="@drawable/bg_close_btn" android:padding="10dp"
+            android:contentDescription="Share" />
+
+    </LinearLayout>
+
+    <!-- Bottom info -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="70dp"
+        android:orientation="vertical" android:padding="16dp">
+
+        <TextView android:id="@+id/tv_reel_title"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:textSize="16sp" android:textStyle="bold"
+            android:textColor="@color/white" android:fontFamily="@font/poppins"
+            android:maxLines="2" android:ellipsize="end" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_watch_full"
+            android:layout_width="wrap_content" android:layout_height="40dp"
+            android:text="পুরো মুভি দেখুন →"
+            android:textSize="12sp" android:textColor="@color/white"
+            android:textStyle="bold" android:fontFamily="@font/poppins"
+            app:backgroundTint="@color/brand_primary" app:cornerRadius="20dp"
+            android:paddingHorizontal="16dp" android:layout_marginTop="10dp" />
+
+    </LinearLayout>
+
+</FrameLayout>

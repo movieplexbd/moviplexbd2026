@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="@color/surface">
+
+    <ImageButton
+        android:id="@+id/btnClose"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_gravity="end"
+        android:background="@drawable/bg_icon_btn"
+        android:src="@drawable/ic_close"
+        android:contentDescription="Close"/>
+
+    <TextView
+        android:id="@+id/tvWatchPartyInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Watch Party"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/t1"
+        android:gravity="center"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="বন্ধুদের সাথে একসাথে দেখুন"
+        android:textSize="13sp"
+        android:textColor="@color/t3"
+        android:gravity="center"
+        android:layout_marginBottom="24dp"/>
+
+    <!-- Host -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnHostParty"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="🎬 Host করুন (Room তৈরি করুন)"
+        android:textSize="14sp"
+        app:cornerRadius="12dp"
+        android:layout_marginBottom="12dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="অথবা"
+        android:textSize="13sp"
+        android:textColor="@color/t3"
+        android:gravity="center"
+        android:layout_marginBottom="12dp"/>
+
+    <!-- Join -->
+    <LinearLayout
+        android:id="@+id/layoutJoinCode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Room Code (e.g. ABC123)"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_marginBottom="12dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etRoomCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapCharacters"
+                android:maxLength="6"
+                android:letterSpacing="0.3"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnJoinParty"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="🔗 Join করুন"
+            android:textSize="14sp"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            app:cornerRadius="12dp"
+            app:strokeColor="@color/brand_primary"
+            app:strokeWidth="2dp"/>
+    </LinearLayout>
+
+</LinearLayout>

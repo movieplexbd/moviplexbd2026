@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:scrollbars="none"
+    android:overScrollMode="never">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="100dp">
+
+        <!-- ═══ HERO PROFILE CARD ═══ -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="56dp"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="@color/surface">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:paddingVertical="24dp"
+                android:paddingHorizontal="20dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/iv_avatar"
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:src="@drawable/ic_profile"
+                    app:civ_border_width="2dp"
+                    app:civ_border_color="@color/brand_primary"
+                    android:layout_marginBottom="12dp" />
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ব্যবহারকারী"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/t1"
+                    android:fontFamily="@font/poppins" />
+
+                <TextView
+                    android:id="@+id/tv_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="13sp"
+                    android:textColor="@color/t3"
+                    android:fontFamily="@font/poppins"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="10dp" />
+
+                <TextView
+                    android:id="@+id/tv_plan_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ফ্রি প্ল্যান"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/poppins"
+                    android:paddingHorizontal="14dp"
+                    android:paddingVertical="4dp"
+                    android:background="@drawable/bg_free_badge"
+                    android:layout_marginBottom="4dp" />
+
+                <TextView
+                    android:id="@+id/tv_expiry"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="11sp"
+                    android:textColor="@color/t3"
+                    android:fontFamily="@font/poppins"
+                    android:layout_marginBottom="16dp"
+                    android:visibility="gone" />
+
+                <!-- Action buttons row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_subscribe"
+                        android:layout_width="0dp"
+                        android:layout_height="42dp"
+                        android:layout_weight="1"
+                        android:text="আপগ্রেড করুন"
+                        android:textSize="12sp"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/poppins"
+                        app:backgroundTint="@color/brand_primary"
+                        app:cornerRadius="21dp"
+                        android:layout_marginEnd="8dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_watchlist"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="0dp"
+                        android:layout_height="42dp"
+                        android:layout_weight="1"
+                        android:text="ওয়াচলিস্ট"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/poppins"
+                        app:strokeColor="@color/brand_primary"
+                        app:cornerRadius="21dp" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- ═══ STORAGE INFO ═══ -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="@color/surface"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="14dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="12dp">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_download"
+                app:tint="@color/t3"
+                android:layout_marginEnd="12dp" />
+
+            <TextView
+                android:id="@+id/tv_storage"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="ডাউনলোড স্টোরেজ: 0 MB"
+                android:textSize="13sp"
+                android:textColor="@color/t2"
+                android:fontFamily="@font/poppins" />
+        </LinearLayout>
+
+        <!-- ═══ CONTINUE WATCHING ═══ -->
+        <LinearLayout
+            android:id="@+id/layout_continue_watching"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="12dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="দেখা শুরু করেছেন"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="@color/t1"
+                android:fontFamily="@font/poppins"
+                android:paddingBottom="10dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_continue_watching"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:nestedScrollingEnabled="false"
+                android:clipToPadding="false"
+                android:scrollbars="none"
+                android:overScrollMode="never" />
+        </LinearLayout>
+
+        <!-- ═══ RECENTLY VIEWED ═══ -->
+        <LinearLayout
+            android:id="@+id/layout_recently_viewed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="12dp"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="সম্প্রতি দেখেছেন"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/t1"
+                    android:fontFamily="@font/poppins" />
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_recently_viewed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:nestedScrollingEnabled="false"
+                android:clipToPadding="false"
+                android:scrollbars="none"
+                android:overScrollMode="never" />
+        </LinearLayout>
+
+        <!-- ═══ ADMIN CARD ═══ -->
+        <LinearLayout
+            android:id="@+id/btn_admin"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="@color/surface"
+            android:paddingHorizontal="20dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="4dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@drawable/ic_star"
+                app:tint="@color/brand_primary"
+                android:layout_marginEnd="14dp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="অ্যাডমিন প্যানেল"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/t1"
+                android:fontFamily="@font/poppins" />
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/sw_admin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <!-- ═══ MENU ITEMS ═══ -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="@color/surface">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Dark mode toggle -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="18dp">
+
+                    <ImageView android:layout_width="20dp" android:layout_height="20dp"
+                        android:src="@drawable/ic_brightness" app:tint="@color/t3"
+                        android:layout_marginEnd="14dp" />
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:text="ডার্ক মোড"
+                        android:textSize="14sp" android:textColor="@color/t1" android:fontFamily="@font/poppins" />
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/sw_dark_mode"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <View android:layout_width="match_parent" android:layout_height="0.5dp"
+                    android:background="@color/border" android:layout_marginHorizontal="16dp" />
+
+                <!-- Notifications toggle -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="18dp">
+
+                    <ImageView android:layout_width="20dp" android:layout_height="20dp"
+                        android:src="@drawable/ic_download_notif" app:tint="@color/t3"
+                        android:layout_marginEnd="14dp" />
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:text="নোটিফিকেশন"
+                        android:textSize="14sp" android:textColor="@color/t1" android:fontFamily="@font/poppins" />
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/sw_notifications"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <View android:layout_width="match_parent" android:layout_height="0.5dp"
+                    android:background="@color/border" android:layout_marginHorizontal="16dp" />
+
+                <!-- Share App -->
+                <LinearLayout
+                    android:id="@+id/btn_share_app"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="18dp"
+                    android:background="?attr/selectableItemBackground">
+
+                    <ImageView android:layout_width="20dp" android:layout_height="20dp"
+                        android:src="@drawable/ic_share" app:tint="@color/t3"
+                        android:layout_marginEnd="14dp" />
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:text="অ্যাপ শেয়ার করুন"
+                        android:textSize="14sp" android:textColor="@color/t1" android:fontFamily="@font/poppins" />
+                    <ImageView android:layout_width="16dp" android:layout_height="16dp"
+                        android:src="@drawable/ic_arrow_back" android:rotation="180"
+                        app:tint="@color/t3" />
+                </LinearLayout>
+
+                <View android:layout_width="match_parent" android:layout_height="0.5dp"
+                    android:background="@color/border" android:layout_marginHorizontal="16dp" />
+
+                <!-- Contact Support -->
+                <LinearLayout
+                    android:id="@+id/btn_contact_support"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="18dp"
+                    android:background="?attr/selectableItemBackground">
+
+                    <ImageView android:layout_width="20dp" android:layout_height="20dp"
+                        android:src="@drawable/ic_email" app:tint="@color/t3"
+                        android:layout_marginEnd="14dp" />
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:text="সাপোর্টে যোগাযোগ"
+                        android:textSize="14sp" android:textColor="@color/t1" android:fontFamily="@font/poppins" />
+                    <ImageView android:layout_width="16dp" android:layout_height="16dp"
+                        android:src="@drawable/ic_arrow_back" android:rotation="180"
+                        app:tint="@color/t3" />
+                </LinearLayout>
+
+                <View android:layout_width="match_parent" android:layout_height="0.5dp"
+                    android:background="@color/border" android:layout_marginHorizontal="16dp" />
+
+                <!-- Privacy Policy -->
+                <LinearLayout
+                    android:id="@+id/btn_privacy_policy"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="18dp"
+                    android:background="?attr/selectableItemBackground">
+
+                    <ImageView android:layout_width="20dp" android:layout_height="20dp"
+                        android:src="@drawable/ic_privacy" app:tint="@color/t3"
+                        android:layout_marginEnd="14dp" />
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:text="প্রাইভেসি পলিসি"
+                        android:textSize="14sp" android:textColor="@color/t1" android:fontFamily="@font/poppins" />
+                    <ImageView android:layout_width="16dp" android:layout_height="16dp"
+                        android:src="@drawable/ic_arrow_back" android:rotation="180"
+                        app:tint="@color/t3" />
+                </LinearLayout>
+
+                <View android:layout_width="match_parent" android:layout_height="0.5dp"
+                    android:background="@color/border" android:layout_marginHorizontal="16dp" />
+
+                <!-- About -->
+                <LinearLayout
+                    android:id="@+id/btn_about"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="18dp"
+                    android:background="?attr/selectableItemBackground">
+
+                    <ImageView android:layout_width="20dp" android:layout_height="20dp"
+                        android:src="@drawable/ic_info" app:tint="@color/t3"
+                        android:layout_marginEnd="14dp" />
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:text="অ্যাপ সম্পর্কে"
+                        android:textSize="14sp" android:textColor="@color/t1" android:fontFamily="@font/poppins" />
+                    <ImageView android:layout_width="16dp" android:layout_height="16dp"
+                        android:src="@drawable/ic_arrow_back" android:rotation="180"
+                        app:tint="@color/t3" />
+                </LinearLayout>
+
+                <View android:layout_width="match_parent" android:layout_height="0.5dp"
+                    android:background="@color/border" android:layout_marginHorizontal="16dp" />
+
+                <!-- Clear Cache -->
+                <LinearLayout
+                    android:id="@+id/btn_clear_cache"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="18dp"
+                    android:background="?attr/selectableItemBackground">
+
+                    <ImageView android:layout_width="20dp" android:layout_height="20dp"
+                        android:src="@drawable/ic_delete" app:tint="@color/t3"
+                        android:layout_marginEnd="14dp" />
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:text="ক্যাশ মুছুন"
+                        android:textSize="14sp" android:textColor="@color/t1" android:fontFamily="@font/poppins" />
+                    <TextView
+                        android:id="@+id/tv_storage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="11sp"
+                        android:textColor="@color/t3"
+                        android:fontFamily="@font/poppins" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- ═══ SIGN OUT ═══ -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_sign_out"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="লগআউট করুন"
+            android:textColor="@color/red"
+            android:textSize="14sp"
+            android:fontFamily="@font/poppins"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            app:strokeColor="@color/red"
+            app:cornerRadius="25dp" />
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

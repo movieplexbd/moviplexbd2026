@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/bg" android:scrollbars="none" android:fillViewport="true">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:padding="16dp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            app:cardBackgroundColor="@color/surface" app:cardCornerRadius="20dp"
+            app:cardElevation="0dp" app:strokeWidth="0.5dp" app:strokeColor="@color/border">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="20dp">
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="অ্যাপ আপডেট সেটিংস" android:textSize="16sp"
+                    android:textStyle="bold" android:textColor="@color/t1"
+                    android:fontFamily="@font/poppins" android:layout_marginBottom="16dp" />
+
+                <com.google.android.material.textfield.TextInputLayout android:id="@+id/til_version"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp" android:hint="নতুন ভার্সন নম্বর"
+                    app:boxBackgroundColor="#06000000" app:boxStrokeColor="@color/brand_primary"
+                    app:boxStrokeWidthFocused="1.5dp" app:boxStrokeWidth="0.5dp" app:hintTextColor="@color/t2"
+                    app:boxCornerRadiusTopStart="14dp" app:boxCornerRadiusTopEnd="14dp"
+                    app:boxCornerRadiusBottomStart="14dp" app:boxCornerRadiusBottomEnd="14dp">
+                    <com.google.android.material.textfield.TextInputEditText android:id="@+id/et_version"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:textColor="@color/t1" android:fontFamily="@font/poppins" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout android:id="@+id/til_message"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp" android:hint="আপডেট বার্তা"
+                    app:boxBackgroundColor="#06000000" app:boxStrokeColor="@color/brand_primary"
+                    app:boxStrokeWidthFocused="1.5dp" app:boxStrokeWidth="0.5dp" app:hintTextColor="@color/t2"
+                    app:boxCornerRadiusTopStart="14dp" app:boxCornerRadiusTopEnd="14dp"
+                    app:boxCornerRadiusBottomStart="14dp" app:boxCornerRadiusBottomEnd="14dp">
+                    <com.google.android.material.textfield.TextInputEditText android:id="@+id/et_message"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:inputType="textMultiLine" android:lines="3"
+                        android:textColor="@color/t1" android:fontFamily="@font/poppins" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout android:id="@+id/til_url"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp" android:hint="ডাউনলোড URL"
+                    app:boxBackgroundColor="#06000000" app:boxStrokeColor="@color/brand_primary"
+                    app:boxStrokeWidthFocused="1.5dp" app:boxStrokeWidth="0.5dp" app:hintTextColor="@color/t2"
+                    app:boxCornerRadiusTopStart="14dp" app:boxCornerRadiusTopEnd="14dp"
+                    app:boxCornerRadiusBottomStart="14dp" app:boxCornerRadiusBottomEnd="14dp">
+                    <com.google.android.material.textfield.TextInputEditText android:id="@+id/et_url"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:inputType="textUri" android:textColor="@color/t1"
+                        android:fontFamily="@font/poppins" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="56dp"
+                    android:orientation="horizontal" android:gravity="center_vertical"
+                    android:background="@drawable/bg_card" android:paddingHorizontal="16dp"
+                    android:layout_marginBottom="16dp">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:text="বাধ্যতামূলক আপডেট"
+                        android:textSize="14sp" android:textColor="@color/t1"
+                        android:fontFamily="@font/poppins" />
+                    <com.google.android.material.switchmaterial.SwitchMaterial android:id="@+id/switch_force"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <com.google.android.material.button.MaterialButton android:id="@+id/btn_save"
+                    android:layout_width="match_parent" android:layout_height="52dp"
+                    android:text="আপডেট প্রকাশ করুন" android:textSize="15sp"
+                    android:textColor="@color/white" android:textStyle="bold"
+                    android:fontFamily="@font/poppins"
+                    app:backgroundTint="@null" android:background="@drawable/bg_login_button"
+                    app:cornerRadius="28dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+</ScrollView>

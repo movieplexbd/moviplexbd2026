@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="@color/bg">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:gravity="center_vertical"
+        android:paddingHorizontal="20dp" android:paddingTop="52dp" android:paddingBottom="16dp">
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:text="ওয়াচলিস্ট"
+            android:textSize="26sp" android:textStyle="bold"
+            android:textColor="@color/t1" android:fontFamily="@font/poppins" />
+        <ImageView android:layout_width="22dp" android:layout_height="22dp"
+            android:src="@drawable/ic_watchlist_star" app:tint="@color/t2" />
+    </LinearLayout>
+
+    <FrameLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+
+        <androidx.recyclerview.widget.RecyclerView android:id="@+id/rv_watchlist"
+            android:layout_width="match_parent" android:layout_height="match_parent"
+            android:paddingHorizontal="8dp" android:paddingBottom="90dp"
+            android:clipToPadding="false" android:scrollbars="none" />
+
+        <LinearLayout android:id="@+id/layout_empty"
+            android:layout_width="match_parent" android:layout_height="match_parent"
+            android:orientation="vertical" android:gravity="center" android:visibility="gone">
+            <ImageView android:layout_width="80dp" android:layout_height="80dp"
+                android:src="@drawable/ic_watchlist_star" app:tint="@color/t3" android:alpha="0.5" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="ওয়াচলিস্ট খালি" android:textSize="16sp" android:textStyle="bold"
+                android:textColor="@color/t2" android:fontFamily="@font/poppins"
+                android:layout_marginTop="16dp" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="মুভি ওয়াচলিস্টে যোগ করুন" android:textSize="13sp"
+                android:textColor="@color/t3" android:fontFamily="@font/poppins"
+                android:layout_marginTop="6dp" />
+        </LinearLayout>
+    </FrameLayout>
+
+</LinearLayout>

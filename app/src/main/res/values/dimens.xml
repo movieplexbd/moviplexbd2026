@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="screen_padding">16dp</dimen>
+    <dimen name="section_spacing">24dp</dimen>
+    <dimen name="item_spacing">12dp</dimen>
+    <dimen name="card_radius">14dp</dimen>
+    <dimen name="card_radius_lg">18dp</dimen>
+    <dimen name="card_radius_xl">24dp</dimen>
+    <dimen name="banner_height">320dp</dimen>
+    <dimen name="nav_height">68dp</dimen>
+
+    <!-- Movie Card -->
+    <dimen name="movie_card_width">130dp</dimen>
+    <dimen name="movie_card_height">185dp</dimen>
+    <dimen name="movie_card_height_tall">200dp</dimen>
+
+    <!-- Banner -->
+    <dimen name="banner_card_height">320dp</dimen>
+
+    <!-- Player -->
+    <dimen name="player_controls_size">48dp</dimen>
+    <dimen name="player_center_btn_size">72dp</dimen>
+
+    <!-- Avatar -->
+    <dimen name="avatar_size_sm">36dp</dimen>
+    <dimen name="avatar_size_md">52dp</dimen>
+    <dimen name="avatar_size_lg">80dp</dimen>
+
+    <!-- Typography -->
+    <dimen name="text_xs">10sp</dimen>
+    <dimen name="text_sm">12sp</dimen>
+    <dimen name="text_md">14sp</dimen>
+    <dimen name="text_lg">16sp</dimen>
+    <dimen name="text_xl">18sp</dimen>
+    <dimen name="text_2xl">22sp</dimen>
+    <dimen name="text_3xl">26sp</dimen>
+
+    <!-- Elevation -->
+    <dimen name="card_elevation">0dp</dimen>
+    <dimen name="fab_elevation">6dp</dimen>
+</resources>

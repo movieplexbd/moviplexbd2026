@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Night mode = Cinema Dark -->
+    <color name="bg">#09090F</color>
+    <color name="surface">#111119</color>
+    <color name="surface2">#1A1A26</color>
+    <color name="surface3">#222235</color>
+    <color name="surface_glass">#CC111119</color>
+
+    <color name="brand_primary">#E5001A</color>
+    <color name="brand_secondary">#FF6B35</color>
+    <color name="brand_gradient_start">#E5001A</color>
+    <color name="brand_gradient_end">#FF3D00</color>
+    <color name="brand_glow">#40E5001A</color>
+    <color name="brand_soft">#1AE5001A</color>
+
+    <color name="gold">#FFD700</color>
+    <color name="gold_soft">#25FFD700</color>
+    <color name="amber">#F59E0B</color>
+    <color name="amber_dark">#B45309</color>
+
+    <color name="accent_cyan">#00D4FF</color>
+    <color name="accent_purple">#7C3AED</color>
+    <color name="accent_pink">#EC4899</color>
+
+    <color name="t1">#FFFFFF</color>
+    <color name="t2">#9B9BAE</color>
+    <color name="t3">#55556A</color>
+    <color name="t_on_dark">#FFFFFF</color>
+
+    <color name="red">#E5001A</color>
+    <color name="red_soft">#1AE5001A</color>
+    <color name="green">#22C55E</color>
+    <color name="green_soft">#1A22C55E</color>
+    <color name="blue">#3B82F6</color>
+    <color name="blue_glow">#203B82F6</color>
+    <color name="orange">#F97316</color>
+
+    <color name="border">#22FFFFFF</color>
+    <color name="border_bright">#40FFFFFF</color>
+    <color name="overlay_dark">#99000000</color>
+    <color name="overlay_medium">#66000000</color>
+    <color name="overlay_light">#33000000</color>
+
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="transparent">#00000000</color>
+
+    <color name="player_bg">#000000</color>
+    <color name="player_overlay">#99000000</color>
+    <color name="player_controls">#FFFFFFFF</color>
+
+    <color name="nav_bg">#0F0F18</color>
+    <color name="nav_indicator">#1AE5001A</color>
+    <color name="nav_active">#E5001A</color>
+    <color name="nav_inactive">#55556A</color>
+
+    <color name="badge_bg">#E5001A</color>
+    <color name="badge_text">#FFFFFF</color>
+</resources>

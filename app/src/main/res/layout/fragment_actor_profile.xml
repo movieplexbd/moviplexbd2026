@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/bg" android:scrollbars="none" android:overScrollMode="never">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Hero top -->
+        <FrameLayout android:layout_width="match_parent" android:layout_height="200dp"
+            android:background="@drawable/bg_sub_header">
+
+            <ImageButton android:id="@+id/btn_back"
+                android:layout_width="44dp" android:layout_height="44dp"
+                android:layout_gravity="top|start" android:layout_margin="14dp"
+                android:background="@drawable/bg_close_btn"
+                android:src="@drawable/ic_arrow_back"
+                android:contentDescription="Back" android:padding="10dp" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/iv_actor"
+                android:layout_width="90dp" android:layout_height="90dp"
+                android:layout_gravity="bottom|center_horizontal"
+                android:layout_marginBottom="-45dp"
+                android:src="@drawable/ic_nav_profile"
+                app:civ_border_width="3dp" app:civ_border_color="@color/bg" />
+
+        </FrameLayout>
+
+        <!-- Info card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp" android:layout_marginTop="56dp"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="@color/surface" app:cardCornerRadius="20dp"
+            app:cardElevation="0dp" app:strokeWidth="0.5dp" app:strokeColor="@color/border">
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:gravity="center" android:padding="20dp">
+
+                <TextView android:id="@+id/tv_actor_name"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:textSize="20sp" android:textStyle="bold"
+                    android:textColor="@color/t1" android:fontFamily="@font/poppins" />
+
+                <TextView android:id="@+id/tv_actor_bio"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:textSize="13sp" android:textColor="@color/t2"
+                    android:fontFamily="@font/poppins" android:gravity="center"
+                    android:lineSpacingMultiplier="1.5" android:layout_marginTop="10dp" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Movies with actor -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="এই অভিনেতার মুভি" android:textSize="16sp" android:textStyle="bold"
+            android:textColor="@color/t1" android:fontFamily="@font/poppins"
+            android:paddingHorizontal="20dp" android:paddingBottom="12dp" />
+
+        <androidx.recyclerview.widget.RecyclerView android:id="@+id/rv_actor_movies"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:paddingHorizontal="10dp" android:clipToPadding="false"
+            android:nestedScrollingEnabled="false"
+            android:layout_marginBottom="90dp" />
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

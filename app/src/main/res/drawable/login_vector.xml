@@ -1,0 +1,22 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="300dp"
+    android:height="300dp"
+    android:viewportWidth="300"
+    android:viewportHeight="300">
+    <!-- Main Circle -->
+    <path
+        android:fillColor="@color/red_soft"
+        android:pathData="M150,150m-120,0a120,120 0,1 1,240 0a120,120 0,1 1,-240 0" />
+    <!-- User Icon Body -->
+    <path
+        android:fillColor="@color/red"
+        android:pathData="M150,160c-30,0 -55,15 -55,35v10h110v-10c0,-20 -25,-35 -55,-35z" />
+    <!-- User Icon Head -->
+    <path
+        android:fillColor="@color/red"
+        android:pathData="M150,150m-30,0a30,30 0,1 1,60 0a30,30 0,1 1,-60 0" />
+    <!-- Lock Icon -->
+    <path
+        android:fillColor="@color/amber"
+        android:pathData="M210,180h-20v-10c0,-5.5 4.5,-10 10,-10s10,4.5 10,10v10z M215,180v20h-30v-20h5v-10c0,-8.3 6.7,-15 15,-15s15,6.7 15,15v10h-5z" />
+</vector>

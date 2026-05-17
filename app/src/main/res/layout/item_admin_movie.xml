@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:layout_marginHorizontal="12dp" android:layout_marginBottom="10dp"
+    app:cardBackgroundColor="@color/surface" app:cardCornerRadius="16dp"
+    app:cardElevation="0dp" app:strokeWidth="0.5dp" app:strokeColor="@color/border"
+    android:clickable="true" android:focusable="true">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:gravity="center_vertical" android:padding="12dp">
+
+        <ImageView android:id="@+id/iv_thumb"
+            android:layout_width="72dp" android:layout_height="96dp"
+            android:scaleType="centerCrop" android:background="@drawable/bg_movie_card"
+            android:layout_marginEnd="14dp" />
+
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:orientation="vertical">
+            <TextView android:id="@+id/tv_title"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:textSize="14sp" android:textStyle="bold" android:textColor="@color/t1"
+                android:fontFamily="@font/poppins" android:maxLines="2" android:ellipsize="end" />
+            <TextView android:id="@+id/tv_category"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:textSize="11sp" android:textColor="@color/t3"
+                android:fontFamily="@font/poppins" android:layout_marginTop="3dp" />
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical"
+                android:layout_marginTop="6dp">
+                <TextView android:id="@+id/tv_rating"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:textSize="11sp" android:textColor="@color/amber"
+                    android:fontFamily="@font/poppins" android:layout_marginEnd="8dp" />
+                <TextView android:id="@+id/tv_premium_tag"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="PREMIUM" android:textSize="9sp" android:textStyle="bold"
+                    android:textColor="@color/white" android:fontFamily="@font/poppins"
+                    android:background="@drawable/bg_premium_badge"
+                    android:paddingHorizontal="7dp" android:paddingVertical="2dp"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:orientation="vertical" android:gravity="center">
+            <ImageButton android:id="@+id/btn_edit"
+                android:layout_width="40dp" android:layout_height="40dp"
+                android:src="@drawable/ic_info" android:background="@drawable/bg_icon_btn"
+                android:padding="9dp" app:tint="@color/brand_primary"
+                android:contentDescription="Edit" android:layout_marginBottom="6dp" />
+            <ImageButton android:id="@+id/btn_delete"
+                android:layout_width="40dp" android:layout_height="40dp"
+                android:src="@drawable/ic_delete" android:background="@drawable/bg_icon_btn"
+                android:padding="9dp" app:tint="@color/red"
+                android:contentDescription="Delete"
+                android:layout_marginBottom="6dp" />
+            <!-- Series এর জন্য Episode Manager button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_manage_series"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="📋 Episodes"
+                android:textSize="9sp"
+                android:visibility="gone"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                app:strokeColor="@color/brand_primary"
+                app:strokeWidth="1dp"
+                app:cornerRadius="8dp"
+                android:paddingHorizontal="8dp"/>
+        </LinearLayout>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

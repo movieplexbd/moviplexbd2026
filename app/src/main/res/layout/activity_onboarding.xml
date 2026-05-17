@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/bg">
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/onboard_pager"
+        android:layout_width="match_parent" android:layout_height="match_parent" />
+
+    <!-- Bottom controls -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_gravity="bottom" android:orientation="horizontal"
+        android:gravity="center_vertical" android:paddingHorizontal="24dp"
+        android:paddingBottom="48dp" android:paddingTop="16dp">
+
+        <!-- Dots -->
+        <LinearLayout android:id="@+id/dots_container"
+            android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:orientation="horizontal"
+            android:gravity="center_vertical" />
+
+        <!-- Skip/Next -->
+        <TextView android:id="@+id/btn_skip"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="এড়িয়ে যান" android:textSize="14sp"
+            android:textColor="@color/t2" android:fontFamily="@font/poppins"
+            android:padding="8dp" android:layout_marginEnd="16dp" />
+
+        <com.google.android.material.button.MaterialButton android:id="@+id/btn_next"
+            android:layout_width="wrap_content" android:layout_height="48dp"
+            android:text="পরের →" android:textSize="14sp"
+            android:textColor="@color/white" android:fontFamily="@font/poppins"
+            app:backgroundTint="@color/brand_primary" app:cornerRadius="28dp"
+            android:paddingHorizontal="24dp" />
+
+    </LinearLayout>
+
+</FrameLayout>

@@ -1,0 +1,18 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="200"
+    android:viewportHeight="200">
+    <!-- Background Circle -->
+    <path
+        android:fillColor="@color/red"
+        android:pathData="M100,100m-100,0a100,100 0,1 1,200 0a100,100 0,1 1,-200 0" />
+    <!-- Play Icon -->
+    <path
+        android:fillColor="@color/white"
+        android:pathData="M80,65 L140,100 L80,135 Z" />
+    <!-- CineStream Text Representation (Simplified) -->
+    <path
+        android:fillColor="@color/white"
+        android:pathData="M60,150 L140,150 L140,160 L60,160 Z" />
+</vector>
