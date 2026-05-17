@@ -113,8 +113,10 @@ class WatchlistAdapter(
     override fun onBindViewHolder(holder: VH, position: Int) {
         val entry = items[position]
         holder.tvTitle.text = entry.title
-        holder.iv.loadImage(entry.bannerUrl)
-            .placeholder(R.color.surface2).into(holder.iv)
+        Glide.with(holder.iv.context)
+            .load(entry.bannerUrl)
+            .placeholder(R.color.surface2)
+            .into(holder.iv)
         holder.itemView.setOnClickListener { onItemClick(entry) }
         holder.itemView.setOnLongClickListener { onRemove(entry); true }
     }

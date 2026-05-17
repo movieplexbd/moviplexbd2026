@@ -5,6 +5,7 @@ import android.content.Intent
 import android.net.Uri
 import android.util.Log
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.tasks.await
 import kotlinx.coroutines.withContext
 import org.json.JSONObject
 import java.net.HttpURLConnection
@@ -111,14 +112,8 @@ class GitHubUpdateManager(private val context: Context) {
             val db = com.google.firebase.database.FirebaseDatabase
                 .getInstance("https://movies-bee24-default-rtdb.firebaseio.com")
                 .reference
-            val snap = db.child("app_update_config").get()
-                .addOnSuccessListener { }.addOnFailureListener { }
-            // coroutine wait
-            kotlinx.coroutines.tasks.await(
-                com.google.firebase.database.FirebaseDatabase
-                    .getInstance("https://movies-bee24-default-rtdb.firebaseio.com")
-                    .reference.child("app_update_config").get()
-            ).let { snapshot ->
+            val snapshot = db.child("app_update_config").get().await()
+            snapshot.let { snapshot ->
                 val data = snapshot.value as? Map<*, *> ?: return@withContext null
                 val latestVer   = data["latestVersion"]?.toString() ?: return@withContext null
                 val downloadUrl = data["downloadUrl"]?.toString() ?: ""

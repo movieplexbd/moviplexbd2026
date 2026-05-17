@@ -36,7 +36,7 @@ class RecentlyViewedManager(context: Context) {
             title      = movie.title,
             bannerUrl  = movie.bannerImageUrl,
             category   = movie.category,
-            imdbRating = movie.imdbRating,
+            imdbRating = movie.imdbRating.toString(),
             viewedAt   = System.currentTimeMillis()
         ))
         if (list.size > MAX_ITEMS) list.removeAt(list.size - 1)
