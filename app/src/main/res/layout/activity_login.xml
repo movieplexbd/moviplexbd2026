@@ -31,7 +31,7 @@
                     <ImageView android:layout_width="52dp" android:layout_height="52dp"
                         android:layout_gravity="center"
                         android:src="@drawable/ic_login_movie"
-                        android:colorFilter="#FFE5001A"
+                        app:tint="@color/brand_primary"
                         android:contentDescription="Logo" />
                 </FrameLayout>
 
