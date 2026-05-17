@@ -429,7 +429,7 @@
                         android:layout_weight="1" android:text="ক্যাশ মুছুন"
                         android:textSize="14sp" android:textColor="@color/t1" android:fontFamily="@font/poppins" />
                     <TextView
-                        android:id="@+id/tv_storage"
+                        android:id="@+id/tv_cache_size"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="11sp"
