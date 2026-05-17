@@ -153,14 +153,38 @@
             android:scrollbars="none" />
 
         <!-- Active downloads -->
+
+        <!-- Active downloads section -->
+        <LinearLayout android:id="@+id/section_active"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:visibility="gone">
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="ডাউনলোড হচ্ছে" android:textSize="13sp" android:textStyle="bold"
+                android:textColor="@color/t2" android:fontFamily="@font/poppins"
+                android:paddingHorizontal="14dp" android:paddingVertical="8dp" />
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_active_downloads"
+            android:id="@+id/rv_active"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:paddingHorizontal="14dp"
             android:paddingBottom="100dp"
             android:clipToPadding="false" />
+
+        </LinearLayout>
+
+        <!-- Completed downloads header -->
+        <LinearLayout android:id="@+id/section_completed_header"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center_vertical"
+            android:paddingHorizontal="14dp" android:paddingVertical="8dp"
+            android:visibility="gone">
+            <TextView android:id="@+id/tv_completed_label"
+                android:layout_width="0dp" android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="সংরক্ষিত মুভি" android:textSize="13sp" android:textStyle="bold"
+                android:textColor="@color/t2" android:fontFamily="@font/poppins" />
+        </LinearLayout>
 
         <!-- Empty state -->
         <LinearLayout

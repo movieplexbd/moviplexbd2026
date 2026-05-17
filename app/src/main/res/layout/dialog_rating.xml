@@ -2,66 +2,59 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent" android:layout_height="wrap_content"
-    android:orientation="vertical" android:background="@drawable/bg_glass_card"
-    android:padding="24dp" android:gravity="center">
+    android:orientation="vertical" android:background="@color/surface"
+    android:paddingBottom="32dp">
 
-    <ImageView android:layout_width="56dp" android:layout_height="56dp"
-        android:src="@drawable/ic_star" app:tint="@color/gold"
+    <View android:layout_width="40dp" android:layout_height="4dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp" android:layout_marginBottom="16dp"
+        android:background="@drawable/bg_handle" />
+
+    <TextView android:id="@+id/tv_rating_movie_title"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:textSize="16sp" android:textStyle="bold"
+        android:textColor="@color/t1" android:fontFamily="@font/poppins"
+        android:gravity="center" android:maxLines="2" android:ellipsize="end"
+        android:paddingHorizontal="20dp" android:layout_marginBottom="16dp" />
+
+    <RatingBar android:id="@+id/rating_bar"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_gravity="center" android:numStars="5"
+        android:stepSize="0.5" android:rating="0"
         android:layout_marginBottom="16dp" />
 
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:text="মুভিটি কেমন লাগলো?" android:textSize="18sp" android:textStyle="bold"
-        android:textColor="@color/t1" android:fontFamily="@font/poppins"
-        android:layout_marginBottom="6dp" />
-
-    <TextView android:id="@+id/tv_movie_title"
-        android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:textSize="13sp" android:textColor="@color/t2"
-        android:fontFamily="@font/poppins" android:layout_marginBottom="20dp" />
-
-    <!-- Star rating bar -->
-    <RatingBar android:id="@+id/rating_bar"
-        style="?android:attr/ratingBarStyle"
-        android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:numStars="5" android:stepSize="1"
-        android:progressTint="@color/gold"
-        android:secondaryProgressTint="@color/surface2"
-        android:layout_marginBottom="20dp" />
-
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_comment"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:hint="মন্তব্য (ঐচ্ছিক)"
-        app:boxBackgroundColor="#06000000"
+        android:layout_marginHorizontal="20dp" android:layout_marginBottom="20dp"
+        android:hint="রিভিউ লিখুন (ঐচ্ছিক)"
         app:boxStrokeColor="@color/brand_primary"
-        app:boxStrokeWidthFocused="1.5dp" app:boxStrokeWidth="0.5dp"
         app:hintTextColor="@color/t2"
         app:boxCornerRadiusTopStart="14dp" app:boxCornerRadiusTopEnd="14dp"
-        app:boxCornerRadiusBottomStart="14dp" app:boxCornerRadiusBottomEnd="14dp"
-        android:layout_marginBottom="20dp">
+        app:boxCornerRadiusBottomStart="14dp" app:boxCornerRadiusBottomEnd="14dp">
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_comment"
+            android:id="@+id/et_review"
             android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:inputType="textMultiLine" android:lines="3"
+            android:inputType="textMultiLine" android:minLines="3"
             android:textColor="@color/t1" android:fontFamily="@font/poppins" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <com.google.android.material.button.MaterialButton android:id="@+id/btn_cancel"
-            android:layout_width="0dp" android:layout_weight="1" android:layout_height="48dp"
-            android:text="বাতিল" android:textColor="@color/brand_primary"
-            android:fontFamily="@font/poppins"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            app:strokeColor="@color/brand_primary" app:cornerRadius="14dp"
-            app:backgroundTint="@color/transparent" android:layout_marginEnd="8dp" />
-        <com.google.android.material.button.MaterialButton android:id="@+id/btn_submit"
-            android:layout_width="0dp" android:layout_weight="1" android:layout_height="48dp"
-            android:text="জমা দিন" android:textColor="@color/white"
-            android:fontFamily="@font/poppins"
-            app:backgroundTint="@color/brand_primary" app:cornerRadius="14dp"
-            android:layout_marginStart="8dp" />
-    </LinearLayout>
+        android:orientation="horizontal" android:paddingHorizontal="20dp">
 
+        <com.google.android.material.button.MaterialButton android:id="@+id/btn_cancel_rating"
+            android:layout_width="0dp" android:layout_weight="1" android:layout_height="48dp"
+            android:text="বাতিল" android:textSize="14sp"
+            android:textColor="@color/t2" android:fontFamily="@font/poppins"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            app:strokeColor="@color/border" app:cornerRadius="14dp"
+            app:backgroundTint="@color/transparent"
+            android:layout_marginEnd="12dp" />
+
+        <com.google.android.material.button.MaterialButton android:id="@+id/btn_submit_rating"
+            android:layout_width="0dp" android:layout_weight="1" android:layout_height="48dp"
+            android:text="জমা দিন" android:textSize="14sp"
+            android:textColor="@color/white" android:fontFamily="@font/poppins"
+            app:backgroundTint="@color/brand_primary" app:cornerRadius="14dp" />
+    </LinearLayout>
 </LinearLayout>

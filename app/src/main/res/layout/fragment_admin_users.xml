@@ -49,7 +49,43 @@
           android:indeterminateTint="@color/brand_primary"
           android:visibility="gone" />
 
-      <androidx.recyclerview.widget.RecyclerView android:id="@+id/rv_users"
+      
+    <!-- Stats row -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:paddingHorizontal="12dp"
+        android:paddingBottom="8dp" android:gravity="center_vertical">
+        <TextView android:id="@+id/tv_total_users"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="0" android:textSize="20sp" android:textStyle="bold"
+            android:textColor="@color/brand_primary" android:fontFamily="@font/poppins"
+            android:layout_marginEnd="4dp" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="মোট |" android:textSize="11sp" android:textColor="@color/t3"
+            android:fontFamily="@font/poppins" android:layout_marginEnd="10dp" />
+        <TextView android:id="@+id/tv_premium_users"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="0" android:textSize="14sp" android:textStyle="bold"
+            android:textColor="@color/amber" android:fontFamily="@font/poppins"
+            android:layout_marginEnd="4dp" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="প্রিমিয়াম |" android:textSize="11sp" android:textColor="@color/t3"
+            android:fontFamily="@font/poppins" android:layout_marginEnd="10dp" />
+        <TextView android:id="@+id/tv_risk_users"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="0" android:textSize="14sp" android:textStyle="bold"
+            android:textColor="@color/red" android:fontFamily="@font/poppins"
+            android:layout_marginEnd="4dp" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="রিস্ক" android:textSize="11sp" android:textColor="@color/t3"
+            android:fontFamily="@font/poppins" />
+    </LinearLayout>
+    <!-- Count label -->
+    <TextView android:id="@+id/tv_count"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:textSize="11sp" android:textColor="@color/t3"
+        android:fontFamily="@font/poppins" android:paddingHorizontal="14dp"
+        android:paddingBottom="6dp" />
+    <androidx.recyclerview.widget.RecyclerView android:id="@+id/rv_users"
           android:layout_width="match_parent" android:layout_height="0dp"
           android:layout_weight="1" android:padding="10dp" android:clipToPadding="false"
           android:overScrollMode="never" android:scrollbars="none" />

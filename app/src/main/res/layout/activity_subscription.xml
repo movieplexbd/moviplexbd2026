@@ -1,165 +1,171 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent" android:layout_height="match_parent"
-    android:background="@color/bg" android:scrollbars="none" android:overScrollMode="never">
+    android:background="@color/bg">
 
-    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:orientation="vertical" android:paddingBottom="40dp">
+    <!-- Form layout (shown by default) -->
+    <androidx.core.widget.NestedScrollView android:id="@+id/layout_form"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:scrollbars="none" android:overScrollMode="never">
 
-        <!-- Hero header (always dark/cinematic) -->
-        <FrameLayout android:layout_width="match_parent" android:layout_height="240dp"
-            android:background="@drawable/bg_sub_header">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:paddingBottom="40dp">
 
-            <ImageButton android:id="@+id/btn_back"
-                android:layout_width="44dp" android:layout_height="44dp"
-                android:layout_gravity="top|start" android:layout_margin="16dp"
-                android:background="@drawable/bg_close_btn"
-                android:src="@drawable/ic_arrow_back"
-                android:contentDescription="Back" android:padding="10dp" />
+            <!-- Hero header -->
+            <FrameLayout android:layout_width="match_parent" android:layout_height="240dp"
+                android:background="@drawable/bg_sub_header">
 
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:layout_gravity="bottom" android:orientation="vertical" android:padding="22dp">
-
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="🔥 সীমিত অফার"
-                    android:textColor="@color/brand_primary" android:textSize="11sp"
-                    android:textStyle="bold" android:fontFamily="@font/poppins"
-                    android:background="@drawable/bg_offer_badge"
-                    android:paddingHorizontal="12dp" android:paddingVertical="5dp"
-                    android:layout_marginBottom="10dp" />
-
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="এক্সক্লুসিভ প্ল্যান"
-                    android:textColor="#FFFFFF" android:textSize="28sp"
-                    android:textStyle="bold" android:fontFamily="@font/poppins"
-                    android:layout_marginBottom="6dp" />
-
-                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:orientation="horizontal" android:gravity="center_vertical">
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:text="৳১০" android:textColor="#FFFFFF"
-                        android:textSize="34sp" android:textStyle="bold"
-                        android:fontFamily="@font/poppins" />
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:text=" / এককালীন" android:textColor="#CCFFFFFF"
-                        android:textSize="14sp" android:fontFamily="@font/poppins" />
-                </LinearLayout>
-            </LinearLayout>
-        </FrameLayout>
-
-        <!-- Feature list card -->
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp" android:layout_marginTop="16dp"
-            app:cardBackgroundColor="@color/surface" app:cardCornerRadius="20dp"
-            app:cardElevation="0dp" app:strokeWidth="0.5dp" app:strokeColor="@color/border">
-
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:orientation="vertical" android:padding="20dp">
-
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="সুবিধাসমূহ" android:textSize="15sp" android:textStyle="bold"
-                    android:textColor="@color/t1" android:fontFamily="@font/poppins"
-                    android:layout_marginBottom="14dp" />
-
-                <!-- Feature items -->
-                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:orientation="horizontal" android:gravity="center_vertical"
-                    android:layout_marginBottom="12dp">
-                    <ImageView android:layout_width="20dp" android:layout_height="20dp"
-                        android:src="@drawable/ic_check_circle" app:tint="@color/green"
-                        android:layout_marginEnd="12dp" />
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:text="সকল মুভি আনলিমিটেড দেখুন"
-                        android:textSize="14sp" android:textColor="@color/t1"
-                        android:fontFamily="@font/poppins" />
-                </LinearLayout>
+                <ImageButton android:id="@+id/btn_back"
+                    android:layout_width="44dp" android:layout_height="44dp"
+                    android:layout_gravity="top|start" android:layout_margin="16dp"
+                    android:background="@drawable/bg_close_btn"
+                    android:src="@drawable/ic_arrow_back"
+                    android:contentDescription="Back" android:padding="10dp" />
 
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:orientation="horizontal" android:gravity="center_vertical"
-                    android:layout_marginBottom="12dp">
-                    <ImageView android:layout_width="20dp" android:layout_height="20dp"
-                        android:src="@drawable/ic_check_circle" app:tint="@color/green"
-                        android:layout_marginEnd="12dp" />
+                    android:layout_gravity="bottom" android:orientation="vertical" android:padding="22dp">
+
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:text="HD কোয়ালিটিতে স্ট্রিমিং"
-                        android:textSize="14sp" android:textColor="@color/t1"
-                        android:fontFamily="@font/poppins" />
+                        android:text="এক্সক্লুসিভ প্ল্যান"
+                        android:textColor="#FFFFFF" android:textSize="28sp"
+                        android:textStyle="bold" android:fontFamily="@font/poppins"
+                        android:layout_marginBottom="6dp" />
+
+                    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:gravity="center_vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="৳১০" android:textColor="#FFFFFF"
+                            android:textSize="34sp" android:textStyle="bold"
+                            android:fontFamily="@font/poppins" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text=" / এককালীন" android:textColor="#CCFFFFFF"
+                            android:textSize="14sp" android:fontFamily="@font/poppins" />
+                    </LinearLayout>
                 </LinearLayout>
+            </FrameLayout>
+
+            <!-- Progress bar -->
+            <ProgressBar android:id="@+id/progress_bar"
+                android:layout_width="match_parent" android:layout_height="3dp"
+                style="@android:style/Widget.ProgressBar.Horizontal"
+                android:indeterminate="true"
+                android:indeterminateTint="@color/brand_primary"
+                android:visibility="gone" />
+
+            <!-- Payment instruction card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp" android:layout_marginTop="16dp"
+                app:cardBackgroundColor="@color/surface" app:cardCornerRadius="20dp"
+                app:cardElevation="0dp" app:strokeWidth="0.5dp" app:strokeColor="@color/border">
 
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:orientation="horizontal" android:gravity="center_vertical"
-                    android:layout_marginBottom="12dp">
-                    <ImageView android:layout_width="20dp" android:layout_height="20dp"
-                        android:src="@drawable/ic_check_circle" app:tint="@color/green"
-                        android:layout_marginEnd="12dp" />
+                    android:orientation="vertical" android:padding="20dp">
+
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:text="অফলাইনে ডাউনলোড করুন"
-                        android:textSize="14sp" android:textColor="@color/t1"
-                        android:fontFamily="@font/poppins" />
+                        android:text="পেমেন্ট করুন" android:textSize="15sp" android:textStyle="bold"
+                        android:textColor="@color/t1" android:fontFamily="@font/poppins"
+                        android:layout_marginBottom="10dp" />
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:gravity="center_vertical"
+                        android:layout_marginBottom="8dp">
+                        <TextView android:layout_width="0dp" android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:text="bKash নম্বর:" android:textSize="13sp"
+                            android:textColor="@color/t2" android:fontFamily="@font/poppins" />
+                        <TextView android:id="@+id/tv_payment_number"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="01913305107" android:textSize="16sp" android:textStyle="bold"
+                            android:textColor="@color/brand_primary" android:fontFamily="@font/poppins"
+                            android:layout_marginEnd="8dp" />
+                        <com.google.android.material.button.MaterialButton android:id="@+id/btn_copy"
+                            android:layout_width="wrap_content" android:layout_height="36dp"
+                            android:text="কপি" android:textSize="12sp"
+                            android:textColor="@color/white" android:fontFamily="@font/poppins"
+                            app:backgroundTint="@color/brand_primary" app:cornerRadius="10dp"
+                            android:paddingHorizontal="12dp" />
+                    </LinearLayout>
                 </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Transaction ID input card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp" android:layout_marginTop="14dp"
+                app:cardBackgroundColor="@color/surface" app:cardCornerRadius="20dp"
+                app:cardElevation="0dp" app:strokeWidth="0.5dp" app:strokeColor="@color/border">
 
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:orientation="horizontal" android:gravity="center_vertical">
-                    <ImageView android:layout_width="20dp" android:layout_height="20dp"
-                        android:src="@drawable/ic_check_circle" app:tint="@color/green"
-                        android:layout_marginEnd="12dp" />
+                    android:orientation="vertical" android:padding="20dp">
+
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:text="বিজ্ঞাপন-মুক্ত অভিজ্ঞতা"
-                        android:textSize="14sp" android:textColor="@color/t1"
-                        android:fontFamily="@font/poppins" />
-                </LinearLayout>
+                        android:text="ট্রানজেকশন আইডি দিন" android:textSize="15sp"
+                        android:textStyle="bold" android:textColor="@color/t1"
+                        android:fontFamily="@font/poppins" android:layout_marginBottom="14dp" />
 
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
-
-        <!-- Payment ID input -->
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp" android:layout_marginTop="14dp"
-            app:cardBackgroundColor="@color/surface" app:cardCornerRadius="20dp"
-            app:cardElevation="0dp" app:strokeWidth="0.5dp" app:strokeColor="@color/border">
-
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:orientation="vertical" android:padding="20dp">
-
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="পেমেন্ট তথ্য দিন" android:textSize="15sp"
-                    android:textStyle="bold" android:textColor="@color/t1"
-                    android:fontFamily="@font/poppins" android:layout_marginBottom="14dp" />
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/til_trx_id"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:hint="ট্রানজেকশন আইডি"
-                    app:boxBackgroundColor="#06000000"
-                    app:boxStrokeColor="@color/brand_primary"
-                    app:boxStrokeWidthFocused="1.5dp" app:boxStrokeWidth="0.5dp"
-                    app:hintTextColor="@color/t2"
-                    app:boxCornerRadiusTopStart="14dp" app:boxCornerRadiusTopEnd="14dp"
-                    app:boxCornerRadiusBottomStart="14dp" app:boxCornerRadiusBottomEnd="14dp">
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/et_trx_id"
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/til_trx_id"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent" android:layout_height="wrap_content"
-                        android:inputType="text" android:textColor="@color/t1"
-                        android:fontFamily="@font/poppins" />
-                </com.google.android.material.textfield.TextInputLayout>
+                        android:hint="ট্রানজেকশন আইডি"
+                        app:boxBackgroundColor="#06000000"
+                        app:boxStrokeColor="@color/brand_primary"
+                        app:boxStrokeWidthFocused="1.5dp" app:boxStrokeWidth="0.5dp"
+                        app:hintTextColor="@color/t2"
+                        app:boxCornerRadiusTopStart="14dp" app:boxCornerRadiusTopEnd="14dp"
+                        app:boxCornerRadiusBottomStart="14dp" app:boxCornerRadiusBottomEnd="14dp">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_transaction_id"
+                            android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:inputType="text" android:textColor="@color/t1"
+                            android:fontFamily="@font/poppins" />
+                    </com.google.android.material.textfield.TextInputLayout>
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btn_submit"
-                    android:layout_width="match_parent" android:layout_height="52dp"
-                    android:layout_marginTop="16dp"
-                    android:text="সাবমিট করুন" android:textSize="15sp"
-                    android:textColor="@color/white" android:textStyle="bold"
-                    android:fontFamily="@font/poppins"
-                    app:backgroundTint="@null" android:background="@drawable/bg_login_button"
-                    app:cornerRadius="28dp" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_submit"
+                        android:layout_width="match_parent" android:layout_height="52dp"
+                        android:layout_marginTop="16dp"
+                        android:text="সাবমিট করুন" android:textSize="15sp"
+                        android:textColor="@color/white" android:textStyle="bold"
+                        android:fontFamily="@font/poppins"
+                        app:backgroundTint="@null" android:background="@drawable/bg_login_button"
+                        app:cornerRadius="28dp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
 
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 
+    <!-- Success layout (shown after successful submission) -->
+    <LinearLayout android:id="@+id/layout_success"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:orientation="vertical" android:gravity="center"
+        android:padding="32dp" android:visibility="gone">
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="✅" android:textSize="64sp"
+            android:layout_marginBottom="20dp" android:gravity="center" />
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="সাবমিট সফল হয়েছে!" android:textSize="22sp" android:textStyle="bold"
+            android:textColor="@color/t1" android:fontFamily="@font/poppins"
+            android:gravity="center" android:layout_marginBottom="10dp" />
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="২৪ ঘন্টার মধ্যে আপনার অ্যাকাউন্ট প্রিমিয়াম করা হবে।"
+            android:textSize="14sp" android:textColor="@color/t2"
+            android:fontFamily="@font/poppins" android:gravity="center"
+            android:lineSpacingMultiplier="1.5" android:layout_marginBottom="32dp" />
+
+        <com.google.android.material.button.MaterialButton android:id="@+id/btn_done"
+            android:layout_width="match_parent" android:layout_height="52dp"
+            android:text="ঠিক আছে" android:textSize="15sp"
+            android:textColor="@color/white" android:textStyle="bold"
+            android:fontFamily="@font/poppins"
+            app:backgroundTint="@null" android:background="@drawable/bg_login_button"
+            app:cornerRadius="28dp" />
     </LinearLayout>
-</androidx.core.widget.NestedScrollView>
+
+</FrameLayout>

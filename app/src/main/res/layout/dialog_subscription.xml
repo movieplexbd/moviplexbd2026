@@ -3,87 +3,126 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent" android:layout_height="wrap_content"
     android:orientation="vertical" android:background="@color/surface"
-    android:paddingBottom="28dp">
+    android:paddingBottom="32dp">
 
     <View android:layout_width="40dp" android:layout_height="4dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="10dp" android:layout_marginBottom="16dp"
         android:background="@drawable/bg_handle" />
 
-    <!-- Crown icon + title -->
+    <!-- Crown + title -->
     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
         android:orientation="vertical" android:gravity="center"
-        android:paddingHorizontal="24dp" android:layout_marginBottom="18dp">
+        android:paddingHorizontal="24dp" android:layout_marginBottom="16dp">
 
-        <FrameLayout android:layout_width="72dp" android:layout_height="72dp">
-            <View android:layout_width="72dp" android:layout_height="72dp"
-                android:background="@drawable/bg_premium_badge" android:alpha="0.15" />
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:layout_gravity="center" android:text="👑"
-                android:textSize="28sp" />
-        </FrameLayout>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="👑" android:textSize="36sp" android:layout_marginBottom="8dp" />
 
         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
             android:text="প্রিমিয়াম সদস্যতা" android:textSize="20sp" android:textStyle="bold"
             android:textColor="@color/t1" android:fontFamily="@font/poppins"
-            android:layout_marginTop="12dp" />
+            android:layout_marginBottom="6dp" />
 
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:text="এককালীন মাত্র ৳১০ — সব মুভি আনলিমিটেড"
-            android:textSize="13sp" android:textColor="@color/t2"
-            android:fontFamily="@font/poppins" android:gravity="center"
-            android:layout_marginTop="6dp" />
+        <!-- bKash number -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center"
+            android:layout_marginTop="8dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="bKash নম্বর: " android:textSize="13sp"
+                android:textColor="@color/t2" android:fontFamily="@font/poppins" />
+            <TextView android:id="@+id/tv_bkash_number"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:textSize="14sp" android:textStyle="bold"
+                android:textColor="@color/brand_primary" android:fontFamily="@font/poppins"
+                android:paddingHorizontal="8dp" android:paddingVertical="4dp"
+                android:background="@drawable/bg_search_box" />
+        </LinearLayout>
     </LinearLayout>
 
-    <!-- Feature bullets -->
+    <!-- Plan selection -->
     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:orientation="vertical" android:paddingHorizontal="24dp"
-        android:layout_marginBottom="22dp">
+        android:orientation="horizontal" android:paddingHorizontal="20dp"
+        android:layout_marginBottom="16dp">
 
-        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:orientation="horizontal" android:gravity="center_vertical"
-            android:layout_marginBottom="10dp">
-            <TextView android:layout_width="20dp" android:layout_height="wrap_content"
-                android:text="✅" android:textSize="14sp" android:layout_marginEnd="10dp" />
+        <!-- Monthly plan -->
+        <LinearLayout android:id="@+id/plan_monthly"
+            android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"
+            android:orientation="vertical" android:gravity="center"
+            android:background="@drawable/bg_plan_selected"
+            android:padding="12dp" android:layout_marginEnd="8dp">
             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:text="সব মুভি বিজ্ঞাপন-মুক্ত দেখুন"
-                android:textSize="13sp" android:textColor="@color/t1"
-                android:fontFamily="@font/poppins" />
+                android:text="মাসিক" android:textSize="13sp" android:textStyle="bold"
+                android:textColor="@color/t1" android:fontFamily="@font/poppins"
+                android:layout_marginBottom="4dp" />
+            <TextView android:id="@+id/tv_monthly_price"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="৳ ১০" android:textSize="20sp" android:textStyle="bold"
+                android:textColor="@color/brand_primary" android:fontFamily="@font/poppins" />
         </LinearLayout>
 
-        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:orientation="horizontal" android:gravity="center_vertical"
-            android:layout_marginBottom="10dp">
-            <TextView android:layout_width="20dp" android:layout_height="wrap_content"
-                android:text="✅" android:textSize="14sp" android:layout_marginEnd="10dp" />
+        <!-- Yearly plan -->
+        <LinearLayout android:id="@+id/plan_yearly"
+            android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"
+            android:orientation="vertical" android:gravity="center"
+            android:background="@drawable/bg_plan_unselected"
+            android:padding="12dp">
             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:text="HD কোয়ালিটিতে স্ট্রিমিং"
-                android:textSize="13sp" android:textColor="@color/t1"
-                android:fontFamily="@font/poppins" />
-        </LinearLayout>
-
-        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:orientation="horizontal" android:gravity="center_vertical">
-            <TextView android:layout_width="20dp" android:layout_height="wrap_content"
-                android:text="✅" android:textSize="14sp" android:layout_marginEnd="10dp" />
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:text="অফলাইনে ডাউনলোড করুন"
-                android:textSize="13sp" android:textColor="@color/t1"
-                android:fontFamily="@font/poppins" />
+                android:text="বার্ষিক" android:textSize="13sp" android:textStyle="bold"
+                android:textColor="@color/t1" android:fontFamily="@font/poppins"
+                android:layout_marginBottom="4dp" />
+            <TextView android:id="@+id/tv_yearly_price"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="৳ ৫০" android:textSize="20sp" android:textStyle="bold"
+                android:textColor="@color/t2" android:fontFamily="@font/poppins" />
         </LinearLayout>
     </LinearLayout>
 
-    <!-- Buttons -->
+    <!-- Input fields -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:paddingHorizontal="20dp"
+        android:layout_marginBottom="16dp">
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:hint="ট্রানজেকশন আইডি (TrxID)"
+            app:boxStrokeColor="@color/brand_primary" app:hintTextColor="@color/t2"
+            app:boxCornerRadiusTopStart="14dp" app:boxCornerRadiusTopEnd="14dp"
+            app:boxCornerRadiusBottomStart="14dp" app:boxCornerRadiusBottomEnd="14dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_trx_id"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:inputType="text" android:textColor="@color/t1"
+                android:fontFamily="@font/poppins" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:hint="ফোন নম্বর"
+            app:boxStrokeColor="@color/brand_primary" app:hintTextColor="@color/t2"
+            app:boxCornerRadiusTopStart="14dp" app:boxCornerRadiusTopEnd="14dp"
+            app:boxCornerRadiusBottomStart="14dp" app:boxCornerRadiusBottomEnd="14dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_phone"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:inputType="phone" android:textColor="@color/t1"
+                android:fontFamily="@font/poppins" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+    <!-- Submit button -->
     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
         android:orientation="vertical" android:paddingHorizontal="20dp">
 
-        <com.google.android.material.button.MaterialButton android:id="@+id/btn_subscribe"
+        <com.google.android.material.button.MaterialButton android:id="@+id/btn_submit"
             android:layout_width="match_parent" android:layout_height="52dp"
-            android:text="এখনই সাবস্ক্রাইব করুন  ✨"
-            android:textSize="15sp" android:textColor="@color/white" android:textStyle="bold"
+            android:text="সাবমিট করুন" android:textSize="15sp"
+            android:textColor="@color/white" android:textStyle="bold"
             android:fontFamily="@font/poppins"
             app:backgroundTint="@null" android:background="@drawable/bg_login_button"
-            app:cornerRadius="28dp" android:layout_marginBottom="12dp" />
+            app:cornerRadius="28dp" android:layout_marginBottom="10dp" />
 
         <com.google.android.material.button.MaterialButton android:id="@+id/btn_dismiss"
             android:layout_width="match_parent" android:layout_height="48dp"

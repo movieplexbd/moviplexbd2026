@@ -4,13 +4,26 @@
     android:layout_width="match_parent" android:layout_height="match_parent"
     android:background="@color/black">
 
-    <com.google.android.exoplayer2.ui.StyledPlayerView
-        android:id="@+id/player_view"
-        android:layout_width="match_parent" android:layout_height="match_parent"
-        app:use_controller="false" app:resize_mode="fill" />
+    <!-- WebView for embedded video -->
+    <WebView android:id="@+id/webview_reel"
+        android:layout_width="match_parent" android:layout_height="match_parent" />
 
+    <!-- ExoPlayer/Media3 view (fallback) -->
+    <androidx.media3.ui.PlayerView android:id="@+id/player_view_reel"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        app:use_controller="false" app:resize_mode="fill"
+        android:visibility="gone" />
+
+    <!-- Gradient overlay -->
     <View android:layout_width="match_parent" android:layout_height="match_parent"
         android:background="@drawable/gradient_bottom" />
+
+    <!-- Progress bar -->
+    <ProgressBar android:id="@+id/progress_reel"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:indeterminateTint="@color/white"
+        android:visibility="gone" />
 
     <!-- Right side actions -->
     <LinearLayout android:layout_width="56dp" android:layout_height="wrap_content"
@@ -18,18 +31,23 @@
         android:layout_marginBottom="100dp" android:layout_marginEnd="10dp"
         android:orientation="vertical" android:gravity="center">
 
-        <ImageButton android:id="@+id/btn_reel_like"
+        <ImageButton android:id="@+id/btn_search_movie"
             android:layout_width="46dp" android:layout_height="46dp"
-            android:src="@drawable/ic_star" app:tint="@color/white"
+            android:src="@drawable/ic_search" app:tint="@color/white"
             android:background="@drawable/bg_close_btn" android:padding="10dp"
-            android:contentDescription="Like" android:layout_marginBottom="16dp" />
+            android:contentDescription="Search movie" android:layout_marginBottom="16dp" />
 
-        <ImageButton android:id="@+id/btn_reel_share"
+        <ImageButton android:id="@+id/btn_download_reel"
+            android:layout_width="46dp" android:layout_height="46dp"
+            android:src="@drawable/ic_download" app:tint="@color/white"
+            android:background="@drawable/bg_close_btn" android:padding="10dp"
+            android:contentDescription="Download" android:layout_marginBottom="16dp" />
+
+        <ImageButton android:id="@+id/btn_share_reel"
             android:layout_width="46dp" android:layout_height="46dp"
             android:src="@drawable/ic_share" app:tint="@color/white"
             android:background="@drawable/bg_close_btn" android:padding="10dp"
             android:contentDescription="Share" />
-
     </LinearLayout>
 
     <!-- Bottom info -->
@@ -43,7 +61,15 @@
             android:layout_width="match_parent" android:layout_height="wrap_content"
             android:textSize="16sp" android:textStyle="bold"
             android:textColor="@color/white" android:fontFamily="@font/poppins"
-            android:maxLines="2" android:ellipsize="end" />
+            android:maxLines="2" android:ellipsize="end"
+            android:layout_marginBottom="4dp" />
+
+        <TextView android:id="@+id/tv_movie_name"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:textSize="12sp" android:textColor="#CCFFFFFF"
+            android:fontFamily="@font/poppins"
+            android:maxLines="1" android:ellipsize="end"
+            android:layout_marginBottom="10dp" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_watch_full"
@@ -52,8 +78,7 @@
             android:textSize="12sp" android:textColor="@color/white"
             android:textStyle="bold" android:fontFamily="@font/poppins"
             app:backgroundTint="@color/brand_primary" app:cornerRadius="20dp"
-            android:paddingHorizontal="16dp" android:layout_marginTop="10dp" />
-
+            android:paddingHorizontal="16dp" />
     </LinearLayout>
 
 </FrameLayout>

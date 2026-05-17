@@ -5,7 +5,7 @@
     android:background="@color/bg">
 
     <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/onboard_pager"
+        android:id="@+id/view_pager"
         android:layout_width="match_parent" android:layout_height="match_parent" />
 
     <!-- Bottom controls -->
@@ -15,7 +15,7 @@
         android:paddingBottom="48dp" android:paddingTop="16dp">
 
         <!-- Dots -->
-        <LinearLayout android:id="@+id/dots_container"
+        <LinearLayout android:id="@+id/layout_dots"
             android:layout_width="0dp" android:layout_height="wrap_content"
             android:layout_weight="1" android:orientation="horizontal"
             android:gravity="center_vertical" />

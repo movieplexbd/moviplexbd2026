@@ -50,7 +50,7 @@ class ReelsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewPager = view.findViewById(R.id.viewpager_reels)
+        viewPager = view.findViewById(R.id.reels_pager)
         loadReels()
     }
 

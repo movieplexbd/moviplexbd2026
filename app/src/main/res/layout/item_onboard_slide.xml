@@ -15,7 +15,7 @@
         android:textColor="@color/t1" android:fontFamily="@font/poppins"
         android:gravity="center" android:layout_marginBottom="14dp" />
 
-    <TextView android:id="@+id/tv_description"
+    <TextView android:id="@+id/tv_subtitle"
         android:layout_width="match_parent" android:layout_height="wrap_content"
         android:textSize="14sp" android:textColor="@color/t2"
         android:fontFamily="@font/poppins" android:gravity="center"

@@ -53,16 +53,20 @@
           <!-- Action buttons grid -->
           <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
               android:orientation="horizontal" android:gravity="center">
-              <ImageButton android:id="@+id/btn_block"
-                  android:layout_width="36dp" android:layout_height="36dp"
-                  android:src="@drawable/ic_delete" android:background="@drawable/bg_icon_btn"
-                  android:padding="8dp" app:tint="@color/red"
-                  android:contentDescription="Block" android:layout_marginEnd="6dp" />
-              <ImageButton android:id="@+id/btn_make_premium"
-                  android:layout_width="36dp" android:layout_height="36dp"
-                  android:src="@drawable/ic_check_circle" android:background="@drawable/bg_icon_btn"
-                  android:padding="8dp" app:tint="@color/amber"
-                  android:contentDescription="Make Premium" android:layout_marginEnd="6dp" />
+              <com.google.android.material.button.MaterialButton android:id="@+id/btn_block"
+                  android:layout_width="wrap_content" android:layout_height="36dp"
+                  android:text="ব্লক" android:textSize="10sp"
+                  android:textColor="@color/white" android:fontFamily="@font/poppins"
+                  app:backgroundTint="@color/red" app:cornerRadius="8dp"
+                  android:paddingHorizontal="8dp"
+                  android:layout_marginEnd="6dp" />
+              <com.google.android.material.button.MaterialButton android:id="@+id/btn_make_premium"
+                  android:layout_width="wrap_content" android:layout_height="36dp"
+                  android:text="প্রিমিয়াম দাও" android:textSize="10sp"
+                  android:textColor="@color/white" android:fontFamily="@font/poppins"
+                  app:backgroundTint="@color/amber" app:cornerRadius="8dp"
+                  android:paddingHorizontal="8dp"
+                  android:layout_marginEnd="6dp" />
               <ImageButton android:id="@+id/btn_extend"
                   android:layout_width="36dp" android:layout_height="36dp"
                   android:src="@drawable/ic_download" android:background="@drawable/bg_icon_btn"

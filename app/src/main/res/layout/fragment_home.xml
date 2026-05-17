@@ -230,6 +230,45 @@
                         android:visibility="gone" />
                 </LinearLayout>
 
+
+                <!-- ═══ AI RECOMMENDATIONS SECTION ═══ -->
+                <LinearLayout
+                    android:id="@+id/section_ai_recommendations"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="24dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="16dp"
+                        android:paddingBottom="12dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="AI সেরা পিক"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/t1"
+                            android:fontFamily="@font/poppins" />
+                    </LinearLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_ai_recommendations"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="10dp"
+                        android:clipToPadding="false"
+                        android:overScrollMode="never"
+                        android:nestedScrollingEnabled="false" />
+                </LinearLayout>
+
                 <!-- ═══ TRENDING SECTION ═══ -->
                 <LinearLayout
                     android:id="@+id/section_trending"
