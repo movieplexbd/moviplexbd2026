@@ -15,7 +15,6 @@ import com.ottapp.moviestream.data.model.User
 import com.ottapp.moviestream.data.model.UserActivity
 import com.ottapp.moviestream.data.repository.MovieRepository
 import com.ottapp.moviestream.databinding.FragmentAdminMoviesBinding
-import android.content.Intent
 import com.ottapp.moviestream.util.Constants
 import com.ottapp.moviestream.util.toast
 import kotlinx.coroutines.launch
