@@ -22,8 +22,7 @@
           app:tabGravity="start"
           app:tabIndicatorColor="@color/brand_primary"
           app:tabSelectedTextColor="@color/brand_primary"
-          app:tabTextColor="@color/t3"
-          app:tabTextAppearance="@style/TextStyle.Tab" />
+          app:tabTextColor="@color/t3" />
 
       <FrameLayout android:id="@+id/admin_fragment_container"
           android:layout_width="match_parent" android:layout_height="0dp"
