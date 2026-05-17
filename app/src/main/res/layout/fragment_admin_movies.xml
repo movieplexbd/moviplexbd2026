@@ -1,41 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent" android:layout_height="match_parent"
-    android:background="@color/bg">
+  <androidx.coordinatorlayout.widget.CoordinatorLayout
+      xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      android:layout_width="match_parent" android:layout_height="match_parent"
+      android:background="@color/bg">
 
-    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
-        android:orientation="vertical">
+      <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+          android:orientation="vertical">
 
-        <!-- Search bar -->
-        <LinearLayout android:layout_width="match_parent" android:layout_height="54dp"
-            android:orientation="horizontal" android:gravity="center_vertical"
-            android:background="@drawable/bg_search_box"
-            android:layout_marginHorizontal="14dp" android:layout_marginTop="12dp"
-            android:layout_marginBottom="10dp" android:paddingHorizontal="16dp">
-            <ImageView android:layout_width="18dp" android:layout_height="18dp"
-                android:src="@drawable/ic_search" app:tint="@color/brand_primary"
-                android:layout_marginEnd="10dp" />
-            <EditText android:id="@+id/et_search"
-                android:layout_width="0dp" android:layout_height="match_parent"
-                android:layout_weight="1" android:background="@null"
-                android:hint="মুভি খুঁজুন..." android:textColorHint="@color/t3"
-                android:textColor="@color/t1" android:textSize="14sp"
-                android:fontFamily="@font/poppins" android:singleLine="true"
-                android:imeOptions="actionSearch" />
-        </LinearLayout>
+          <!-- Dashboard stats row -->
+          <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+              android:orientation="horizontal" android:padding="12dp" android:gravity="center_vertical">
+              <TextView android:id="@+id/tv_count"
+                  android:layout_width="0dp" android:layout_height="wrap_content"
+                  android:layout_weight="1" android:text="লোড হচ্ছে..."
+                  android:textSize="13sp" android:textColor="@color/t2"
+                  android:fontFamily="@font/poppins" />
+              <TextView android:id="@+id/tv_active_users"
+                  android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:text="—" android:textSize="13sp" android:textColor="@color/brand_primary"
+                  android:fontFamily="@font/poppins" android:layout_marginEnd="4dp" />
+              <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:text=" ইউজার" android:textSize="12sp" android:textColor="@color/t3"
+                  android:fontFamily="@font/poppins" />
+          </LinearLayout>
 
-        <androidx.recyclerview.widget.RecyclerView android:id="@+id/rv_movies"
-            android:layout_width="match_parent" android:layout_height="0dp"
-            android:layout_weight="1" android:padding="10dp" android:clipToPadding="false"
-            android:overScrollMode="never" android:scrollbars="none" />
-    </LinearLayout>
+          <!-- Action buttons row -->
+          <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+              android:orientation="horizontal" android:paddingHorizontal="12dp"
+              android:paddingBottom="8dp">
+              <com.google.android.material.button.MaterialButton android:id="@+id/btn_refresh"
+                  android:layout_width="0dp" android:layout_weight="1" android:layout_height="36dp"
+                  android:text="↻" android:textSize="14sp"
+                  app:backgroundTint="@color/surface2" android:textColor="@color/t1"
+                  app:cornerRadius="10dp" android:layout_marginEnd="6dp" />
+              <com.google.android.material.button.MaterialButton android:id="@+id/btn_sort"
+                  android:layout_width="0dp" android:layout_weight="1" android:layout_height="36dp"
+                  android:text="সর্ট" android:textSize="11sp"
+                  app:backgroundTint="@color/surface2" android:textColor="@color/t1"
+                  app:cornerRadius="10dp" android:layout_marginEnd="6dp" />
+              <com.google.android.material.button.MaterialButton android:id="@+id/btn_health"
+                  android:layout_width="0dp" android:layout_weight="1" android:layout_height="36dp"
+                  android:text="চেক" android:textSize="11sp"
+                  app:backgroundTint="@color/surface2" android:textColor="@color/t1"
+                  app:cornerRadius="10dp" android:layout_marginEnd="6dp" />
+              <com.google.android.material.button.MaterialButton android:id="@+id/btn_export"
+                  android:layout_width="0dp" android:layout_weight="1" android:layout_height="36dp"
+                  android:text="শেয়ার" android:textSize="11sp"
+                  app:backgroundTint="@color/surface2" android:textColor="@color/t1"
+                  app:cornerRadius="10dp" />
+          </LinearLayout>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab_add" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" android:layout_gravity="bottom|end"
-        android:layout_margin="20dp" app:backgroundTint="@color/brand_primary"
-        app:tint="@color/white" android:src="@android:drawable/ic_input_add"
-        android:contentDescription="Add Movie" />
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+          <!-- Search bar -->
+          <LinearLayout android:layout_width="match_parent" android:layout_height="54dp"
+              android:orientation="horizontal" android:gravity="center_vertical"
+              android:background="@drawable/bg_search_box"
+              android:layout_marginHorizontal="14dp" android:layout_marginBottom="10dp"
+              android:paddingHorizontal="16dp">
+              <ImageView android:layout_width="18dp" android:layout_height="18dp"
+                  android:src="@drawable/ic_search" app:tint="@color/brand_primary"
+                  android:layout_marginEnd="10dp" />
+              <EditText android:id="@+id/et_search"
+                  android:layout_width="0dp" android:layout_height="match_parent"
+                  android:layout_weight="1" android:background="@null"
+                  android:hint="মুভি খুঁজুন..." android:textColorHint="@color/t3"
+                  android:textColor="@color/t1" android:textSize="14sp"
+                  android:fontFamily="@font/poppins" android:singleLine="true"
+                  android:imeOptions="actionSearch" />
+          </LinearLayout>
+
+          <ProgressBar android:id="@+id/progress_bar"
+              android:layout_width="match_parent" android:layout_height="3dp"
+              style="@android:style/Widget.ProgressBar.Horizontal"
+              android:indeterminate="true"
+              android:indeterminateTint="@color/brand_primary"
+              android:visibility="gone" />
+
+          <androidx.recyclerview.widget.RecyclerView android:id="@+id/rv_movies"
+              android:layout_width="match_parent" android:layout_height="0dp"
+              android:layout_weight="1" android:padding="10dp" android:clipToPadding="false"
+              android:overScrollMode="never" android:scrollbars="none" />
+      </LinearLayout>
+
+      <com.google.android.material.floatingactionbutton.FloatingActionButton
+          android:id="@+id/fab_add" android:layout_width="wrap_content"
+          android:layout_height="wrap_content" android:layout_gravity="bottom|end"
+          android:layout_margin="20dp" app:backgroundTint="@color/brand_primary"
+          app:tint="@color/white" android:src="@android:drawable/ic_input_add"
+          android:contentDescription="Add Movie" />
+  </androidx.coordinatorlayout.widget.CoordinatorLayout>
