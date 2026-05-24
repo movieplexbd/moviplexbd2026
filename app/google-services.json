@@ -15,7 +15,15 @@
       },
       "oauth_client": [
         {
-          "client_id": "1080659811750-iedo8km8k81nv4npm71dcec7abn9kuvn.apps.googleusercontent.com",
+          "client_id": "1080659811750-99b1a7l4d5c6tiftkspcnm8tks0rj63h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ottapp.moviestream",
+            "certificate_hash": "d70d4077ce9bf5da0c95a5a3378a3095d5bcd44c"
+          }
+        },
+        {
+          "client_id": "1080659811750-a4qsggntpugav6in3882c0kek15hgm35.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
@@ -28,7 +36,7 @@
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1080659811750-iedo8km8k81nv4npm71dcec7abn9kuvn.apps.googleusercontent.com",
+              "client_id": "1080659811750-4jn1susdj9mae3qs0fcv493bumpot8q9.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
