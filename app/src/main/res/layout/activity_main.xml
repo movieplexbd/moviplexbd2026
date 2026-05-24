@@ -34,12 +34,12 @@
         app:layout_constraintStart_toEndOf="@id/navigation_rail"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Bottom Navigation — dark glass with rounded top -->
+    <!-- Bottom Navigation — clean and compact -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="0dp"
         android:layout_height="@dimen/nav_height"
-        android:background="@drawable/bg_bottom_nav"
+        android:background="@color/surface"
         app:menu="@menu/bottom_nav_menu"
         app:itemIconTint="@color/nav_icon_color"
         app:itemTextColor="@color/nav_text_color"
@@ -47,9 +47,8 @@
         app:itemIconSize="22dp"
         app:itemTextAppearanceActive="@style/BottomNavTextActive"
         app:itemTextAppearanceInactive="@style/BottomNavTextInactive"
-        app:itemActiveIndicatorStyle="@style/NavIndicatorStyle"
-        app:itemPaddingTop="6dp"
-        app:elevation="0dp"
+        app:itemPaddingTop="4dp"
+        app:elevation="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

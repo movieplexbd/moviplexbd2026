@@ -83,18 +83,18 @@
 
     <!-- ══  Bottom Nav  ══ -->
     <style name="BottomNavTextActive" parent="TextAppearance.MaterialComponents.Caption">
-        <item name="android:textSize">10sp</item>
+        <item name="android:textSize">11sp</item>
         <item name="android:fontFamily">@font/poppins</item>
         <item name="android:textStyle">bold</item>
     </style>
     <style name="BottomNavTextInactive" parent="TextAppearance.MaterialComponents.Caption">
-        <item name="android:textSize">10sp</item>
+        <item name="android:textSize">11sp</item>
         <item name="android:fontFamily">@font/poppins</item>
     </style>
 
-    <!-- Nav indicator pill -->
+    <!-- Nav indicator pill (removed/disabled for cleaner look) -->
     <style name="NavIndicatorStyle">
-        <item name="android:color">@color/nav_indicator</item>
+        <item name="android:color">@android:color/transparent</item>
         <item name="shapeAppearance">@style/NavIndicatorShape</item>
     </style>
     <style name="NavIndicatorShape">

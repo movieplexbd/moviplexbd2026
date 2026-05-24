@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="screen_padding">16dp</dimen>
-    <dimen name="section_spacing">24dp</dimen>
+    <dimen name="section_spacing">12dp</dimen>
     <dimen name="item_spacing">12dp</dimen>
     <dimen name="card_radius">14dp</dimen>
     <dimen name="card_radius_lg">18dp</dimen>
     <dimen name="card_radius_xl">24dp</dimen>
-    <dimen name="banner_height">320dp</dimen>
-    <dimen name="nav_height">68dp</dimen>
+    <dimen name="banner_height">280dp</dimen>
+    <dimen name="nav_height">64dp</dimen>
 
     <!-- Movie Card -->
     <dimen name="movie_card_width">130dp</dimen>
@@ -15,7 +15,7 @@
     <dimen name="movie_card_height_tall">200dp</dimen>
 
     <!-- Banner -->
-    <dimen name="banner_card_height">320dp</dimen>
+    <dimen name="banner_card_height">280dp</dimen>
 
     <!-- Player -->
     <dimen name="player_controls_size">48dp</dimen>
