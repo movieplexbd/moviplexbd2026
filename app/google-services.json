@@ -23,6 +23,14 @@
           }
         },
         {
+          "client_id": "1080659811750-m78ug92j35lji00b2f5ejcfi2b2g84k8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ottapp.moviestream",
+            "certificate_hash": "e1cc41d672616f9a18061ac1fcbf16330ddee5aa"
+          }
+        },
+        {
           "client_id": "1080659811750-a4qsggntpugav6in3882c0kek15hgm35.apps.googleusercontent.com",
           "client_type": 3
         }
