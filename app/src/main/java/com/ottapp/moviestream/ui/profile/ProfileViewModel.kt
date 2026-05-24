@@ -4,6 +4,8 @@ import android.app.Application
 import android.util.Log
 import androidx.lifecycle.*
 import com.ottapp.moviestream.data.model.User
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.ottapp.moviestream.data.repository.AuthRepository
 import com.ottapp.moviestream.data.repository.DownloadRepository
 import com.ottapp.moviestream.data.repository.UserRepository
@@ -11,7 +13,7 @@ import com.ottapp.moviestream.util.toReadableSize
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.launch
 
-class ProfileViewModel(app: Application) : AndroidViewModel(app) {
+class ProfileViewModel(private val app: Application) : AndroidViewModel(app) {
 
     companion object {
         private const val TAG = "ProfileViewModel"
@@ -57,6 +59,10 @@ class ProfileViewModel(app: Application) : AndroidViewModel(app) {
     fun signOut() = viewModelScope.launch {
         try {
             authRepo?.signOut()
+            // Also sign out from Google to allow account switching
+            val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).build()
+            val googleSignInClient = GoogleSignIn.getClient(app, gso)
+            googleSignInClient.signOut()
         } catch (e: Exception) {
             Log.e(TAG, "Sign out error: ${e.message}")
         }

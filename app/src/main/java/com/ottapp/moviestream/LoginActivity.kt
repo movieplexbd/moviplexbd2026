@@ -4,13 +4,16 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.common.api.ApiException
 import com.ottapp.moviestream.data.repository.AuthRepository
 import com.ottapp.moviestream.databinding.ActivityLoginBinding
 import com.ottapp.moviestream.util.AccessManager
-import com.ottapp.moviestream.util.hide
-import com.ottapp.moviestream.util.show
 import com.ottapp.moviestream.util.toast
 import com.ottapp.moviestream.data.model.UserDevice
 import com.ottapp.moviestream.data.repository.UserRepository
@@ -23,8 +26,7 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
     private var authRepository: AuthRepository? = null
     private val userRepo = UserRepository()
-
-    private var isSignUpMode = false
+    private lateinit var googleSignInClient: GoogleSignInClient
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,90 +39,61 @@ class LoginActivity : AppCompatActivity() {
             Log.e("LoginActivity", "AuthRepository init failed: ${e.message}", e)
         }
 
+        setupGoogleSignIn()
         setupClickListeners()
     }
 
-    private fun setupClickListeners() {
-        binding.btnEmailAction.setOnClickListener {
-            handleEmailAuth()
-        }
+    private fun setupGoogleSignIn() {
+        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestIdToken(getString(R.string.default_web_client_id))
+            .requestEmail()
+            .build()
 
-        binding.tvToggleMode.setOnClickListener {
-            toggleMode()
-        }
+        googleSignInClient = GoogleSignIn.getClient(this, gso)
     }
 
-    private fun toggleMode() {
-        isSignUpMode = !isSignUpMode
-        if (isSignUpMode) {
-            binding.tilConfirmPassword.show()
-            binding.tilName.show()
-            binding.btnEmailAction.text = getString(R.string.btn_signup)
-            binding.tvToggleMode.text   = getString(R.string.toggle_to_signin)
-            binding.tvAuthTitle.text    = getString(R.string.title_signup)
+    private val googleSignInLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+        if (result.resultCode == RESULT_OK) {
+            val task = GoogleSignIn.getSignedInAccountFromIntent(result.data)
+            try {
+                val account = task.getResult(ApiException::class.java)!!
+                handleGoogleAuth(account.idToken!!)
+            } catch (e: ApiException) {
+                Log.e("LoginActivity", "Google sign in failed", e)
+                showError("Google লগইন ব্যর্থ হয়েছে: ${e.message}")
+            }
         } else {
-            binding.tilConfirmPassword.hide()
-            binding.tilName.hide()
-            binding.btnEmailAction.text = getString(R.string.btn_signin)
-            binding.tvToggleMode.text   = getString(R.string.toggle_to_signup)
-            binding.tvAuthTitle.text    = getString(R.string.title_signin)
+            setLoading(false)
         }
     }
 
-    private fun handleEmailAuth() {
+    private fun setupClickListeners() {
+        binding.btnGoogleLogin.setOnClickListener {
+            setLoading(true)
+            val signInIntent = googleSignInClient.signInIntent
+            googleSignInLauncher.launch(signInIntent)
+        }
+    }
+
+    private fun handleGoogleAuth(idToken: String) {
         val repo = authRepository
         if (repo == null) {
             showError("Firebase সঠিকভাবে চালু হয়নি। অ্যাপ রিস্টার্ট করুন।")
             return
         }
 
-        val email    = binding.etEmail.text.toString().trim()
-        val password = binding.etPassword.text.toString().trim()
-
-        if (email.isEmpty() || password.isEmpty()) {
-            showError("ইমেইল এবং পাসওয়ার্ড দিন")
-            return
-        }
-        if (password.length < 6) {
-            showError("পাসওয়ার্ড কমপক্ষে ৬ অক্ষর হতে হবে")
-            return
-        }
-
-        if (isSignUpMode) {
-            val confirmPassword = binding.etConfirmPassword.text.toString().trim()
-            val name            = binding.etName.text.toString().trim()
-            if (password != confirmPassword) {
-                showError("পাসওয়ার্ড মিলছে না")
-                return
-            }
-            if (name.isEmpty()) {
-                showError("আপনার নাম দিন")
-                return
-            }
-            setLoading(true)
-            lifecycleScope.launch {
-                val result = repo.signUpWithEmail(email, password, name)
-                result.fold(
-                    onSuccess = { goToMain() },
-                    onFailure = { showError(friendlyError(it.message)) }
-                )
-            }
-        } else {
-            setLoading(true)
-            lifecycleScope.launch {
-                val result = repo.signInWithEmail(email, password)
-                result.fold(
-                    onSuccess = { goToMain() },
-                    onFailure = { showError(friendlyError(it.message)) }
-                )
-            }
+        lifecycleScope.launch {
+            val result = repo.signInWithGoogle(idToken)
+            result.fold(
+                onSuccess = { goToMain() },
+                onFailure = { showError(friendlyError(it.message)) }
+            )
         }
     }
 
     private fun goToMain() {
         lifecycleScope.launch {
             try {
-                // Register device
                 val deviceId = Settings.Secure.getString(contentResolver, Settings.Secure.ANDROID_ID)
                 val deviceName = "${Build.MANUFACTURER} ${Build.MODEL}"
                 val user = userRepo.getCurrentUser()
@@ -145,10 +118,6 @@ class LoginActivity : AppCompatActivity() {
     private fun friendlyError(msg: String?): String {
         return when {
             msg == null                           -> "অজানা সমস্যা হয়েছে"
-            msg.contains("password")              -> "পাসওয়ার্ড ভুল আছে"
-            msg.contains("no user") || msg.contains("identifier") -> "এই ইমেইলে কোনো অ্যাকাউন্ট নেই"
-            msg.contains("already in use")        -> "এই ইমেইল দিয়ে আগেই অ্যাকাউন্ট আছে"
-            msg.contains("badly formatted") || msg.contains("format") -> "ইমেইল সঠিক নয়"
             msg.contains("network")               -> "ইন্টারনেট সংযোগ নেই"
             msg.contains("CONFIGURATION_NOT_FOUND") || msg.contains("API_NOT_AVAILABLE") -> "Firebase কনফিগারেশন সমস্যা"
             else                                  -> msg
@@ -158,12 +127,12 @@ class LoginActivity : AppCompatActivity() {
     private fun setLoading(loading: Boolean) {
         if (loading) {
             binding.progressBar.visibility = View.VISIBLE
-            binding.btnEmailAction.text = ""
-            binding.btnEmailAction.isEnabled = false
+            binding.btnGoogleLogin.text = ""
+            binding.btnGoogleLogin.isEnabled = false
         } else {
             binding.progressBar.visibility = View.GONE
-            binding.btnEmailAction.text = if (isSignUpMode) getString(R.string.btn_signup) else getString(R.string.btn_signin)
-            binding.btnEmailAction.isEnabled = true
+            binding.btnGoogleLogin.text = "Google দিয়ে লগইন করুন"
+            binding.btnGoogleLogin.isEnabled = true
         }
     }
 

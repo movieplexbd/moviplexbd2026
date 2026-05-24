@@ -64,6 +64,7 @@
     <string name="coming_soon">শীঘ্রই আসছে</string>
     <string name="request_limit_reached">আপনি আজ আর রিকোয়েস্ট করতে পারবেন না।</string>
     <string name="nav_watchlist">ওয়াচলিস্ট</string>
+    <string name="default_web_client_id">YOUR_WEB_CLIENT_ID_HERE</string>
     <!-- Series & Episodes -->
     <string name="str_episodes">এপিসোড</string>
     <string name="str_season">সিজন</string>

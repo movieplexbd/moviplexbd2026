@@ -4,6 +4,7 @@ import android.content.Context
 import android.util.Log
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.database.FirebaseDatabase
 import com.ottapp.moviestream.data.model.User
 import kotlinx.coroutines.tasks.await
@@ -42,15 +43,16 @@ class AuthRepository(private val context: Context) {
         }
     }
 
-    suspend fun signUpWithEmail(email: String, password: String, displayName: String): Result<FirebaseUser> {
+    suspend fun signInWithGoogle(idToken: String): Result<FirebaseUser> {
         return try {
-            val result = auth.createUserWithEmailAndPassword(email, password).await()
+            val credential = GoogleAuthProvider.getCredential(idToken, null)
+            val result = auth.signInWithCredential(credential).await()
             val firebaseUser = result.user
                 ?: return Result.failure(Exception("Firebase user null"))
-            saveUserToDatabase(firebaseUser, displayName)
+            saveUserToDatabase(firebaseUser)
             Result.success(firebaseUser)
         } catch (e: Exception) {
-            Log.e(TAG, "Email sign-up failed: ${e.message}", e)
+            Log.e(TAG, "Google sign-in failed: ${e.message}", e)
             Result.failure(e)
         }
     }

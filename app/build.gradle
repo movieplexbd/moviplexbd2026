@@ -103,6 +103,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-database-ktx'
     implementation 'com.google.firebase:firebase-crashlytics-ktx'
     implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation 'com.google.android.gms:play-services-auth:21.0.0'
     // Push Notification support
     implementation 'com.google.firebase:firebase-messaging-ktx'
 
